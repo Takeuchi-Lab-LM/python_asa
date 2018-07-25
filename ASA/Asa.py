@@ -1,5 +1,5 @@
-# import time
-from init.YamlFile import YamlFile
+import time
+from init.JsonFile import JsonFile
 from myjson.LoadJson import LoadJson
 from parse.Parse import Parse
 from output.Output import Output
@@ -8,7 +8,7 @@ from output.Output import Output
 class Asa():
 
     def __init__(self, analyzer="cabocha"):
-        files = YamlFile()
+        files = JsonFile()
         self.dicts = LoadJson(files)
         self.parser = Parse(self.dicts, analyzer)
         self.output = Output()
@@ -23,9 +23,11 @@ class Asa():
 
 if __name__ == '__main__':
 
-    # start = time.time()
+    start = time.time()
+
     asa = Asa()
     asa.parse("今日はいい天気だ")
     asa.selectOutput()
-    # elapsed_time = time.time() - start
-    # print ("elapsed_time:{0}".format(elapsed_time) + "[sec]")
+    elapsed_time = time.time() - start
+
+    print ("elapsed_time:{0}".format(elapsed_time) + "[sec]")

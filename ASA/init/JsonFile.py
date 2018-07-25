@@ -3,7 +3,7 @@
 # 今はここに直書きだが，いい方法があれば変更したい
 
 
-class YamlFile():
+class JsonFile():
 
     def __init__(self):
         self.frame = "dict/new_argframes.json"

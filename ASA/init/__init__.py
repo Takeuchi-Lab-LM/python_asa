@@ -1,1 +1,1 @@
-from .YamlFile import YamlFile
+from .JsonFile import JsonFile
