@@ -27,6 +27,7 @@ if __name__ == '__main__':
 
     asa = Asa()
     asa.parse("今日はいい天気だ")
+    # asa.parse("太郎は走った")
     asa.selectOutput()
     elapsed_time = time.time() - start
 

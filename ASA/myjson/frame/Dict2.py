@@ -6,3 +6,6 @@ class Dict2():
         for line in open(dic):
             n = line.strip().split(' ')
             self.index.update({n[0]: (int(n[1]), int(n[2]))})
+
+    def isFrame(self, verb):
+        return verb in self.index

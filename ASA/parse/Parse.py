@@ -7,6 +7,7 @@ class Parse():
     def __init__(self, dicts, analyzertype):
         self.analyzer = Analyzer(analyzertype, "utf-8")
         self.basic = Basic()
+        self.basic.setFrames(dicts.frames)
 
     def parse(self, line):
         result = self.parseChunk(line)
