@@ -1,20 +1,28 @@
 import json
-from myjson import frame
-from myjson import cchart
-from myjson import filter
+import sys
+from init.JsonFile import JsonFile
+# from myjson import frame
+# from myjson import cchart
+# from myjson import filter
 
 
 class LoadJson():
 
-    def __init__(self, files):
-        self.frames = self.loadFrames(files.dicframe, files.frame)
-        self.categorys = self.loadCategorys(files.category)
-        self.ccharts = self.loadCcharts(files.diccchart, files.cchart)
-        self.idioms = self.loadIdioms(files.idiom)
-        self.filters = self.loadFilters(files.dicfilter, files.filter)
-        self.compoundPredicates = self.loadCompoundPredicates(files.compoundPredicate)
-        self.nouns = self.loadNouns(files.noun)
+    def __init__(self, files: JsonFile) -> None:
+        self.frames = self.__loadJson(files.frame)
+        self.categorys = self.__loadJson(files.category)
+        self.ccharts = self.__loadJson(files.cchart)
+        self.idioms = self.__loadJson(files.idiom)
+        self.filters = self.__loadJson(files.filter)
+        self.compoundPredicates = self.__loadJson(files.compoundPredicate)
+        self.nouns = self.__loadJson(files.noun)
 
+    def __loadJson(self, jsonpath: str) -> dict:
+        with open(jsonpath, 'r+') as f:
+            return json.load(f)
+
+# jsonを一気に読み込む形式にしたので、下記は全て必要なくなった
+'''
     def loadFrames(self, dic, jsonpath):
         frames = frame.Dict2(dic, jsonpath)
         return frames
@@ -42,3 +50,4 @@ class LoadJson():
     def loadNouns(self, jsonpath):
         with open(jsonpath, 'r+') as f:
             return json.load(f)
+'''

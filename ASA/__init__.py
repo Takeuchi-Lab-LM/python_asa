@@ -1,2 +1,2 @@
 from . import init
-from . import myjson
+from . import load

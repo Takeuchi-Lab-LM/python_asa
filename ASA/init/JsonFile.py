@@ -5,7 +5,7 @@
 
 class JsonFile():
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.frame = "dict/new_argframes.json"
         self.dicframe = "dict/new_argframes.dic"
         self.cchart = "dict/ccharts.json"

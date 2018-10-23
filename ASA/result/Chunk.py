@@ -3,7 +3,7 @@
 
 class Chunk():
 
-    def __init__(self, line):
+    def __init__(self, line: str) -> None:
         # 必須な基本情報
         self.id = 0  # 文節のid
         self.surface = ""  # 文節の表層
@@ -33,7 +33,8 @@ class Chunk():
         # 語義や意味役割に必要な変数
         self.semantic = ""
         self.semrole = []
-        self.arg = None
+        # self.arg = None
+        self.arg = []  # 型はリスト?
         self.category = []
         self.adjunct = ""
         self.similar = 0.0
