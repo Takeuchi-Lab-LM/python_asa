@@ -90,7 +90,7 @@ class Basic():
                         predicate = morph.base
                 head = predicate if predicate in self.frames else morph.base
         elif chunk.ctype == "adjective":
-            morph = [morph for morph in chunk.morphs if re.search(r"形容詞|形容詞,自立|形容詞語幹", morph.pos)][0]
+            morph = [morph for morph in chunk.morphs if re.search(r"形容詞|形容詞,自立|形容動詞語幹", morph.pos)][0]
             if re.search(r"形容詞|形容詞,自立", morph.pos):
                 head = morph.base
             elif re.search(r"形容詞語幹", morph.pos):
