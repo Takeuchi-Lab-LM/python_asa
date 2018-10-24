@@ -16,7 +16,7 @@ if __name__ == '__main__':
         asa.selectOutput()
         elapsed_time = time.time() - start
         print ("elapsed_time:{0}".format(elapsed_time) + "[sec]")
-    print('ASA終了')
+    print('終了')
 
 '''
 asa.parse("今日はいい天気だ")
