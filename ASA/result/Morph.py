@@ -41,7 +41,8 @@ class Morph():
             self.ctype = div2[5]
         self.pos = self.getPos()
         self.base = div2[6]
-        self.read = div2[7]
+        if len(div2) >= 8:
+            self.read = div2[7]
         self.ne = div1[2]
 
     def getPos(self):
