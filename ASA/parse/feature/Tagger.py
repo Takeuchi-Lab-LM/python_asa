@@ -3,7 +3,6 @@ from result.Result import Result
 from result.Chunk import Chunk
 from result.Morph import Morph
 
-import pprint
 # 態や時制などの情報を付与するためのクラス
 
 
@@ -18,7 +17,7 @@ class Tagger():
             chunk.voice = self.__parseVoice(chunk)
             chunk.tense = self.__parseTense(chunk)
             chunk.polarity = self.__parsePolarity(chunk)
-            chunk.ctype = self.__parseSentElem(chunk)
+            chunk.sentelem = self.__parseSentElem(chunk)
             chunk.mood = self.__parseMood(chunk)
             chunk.category = self.__parseCategory(chunk)
             for morph in chunk.morphs:
