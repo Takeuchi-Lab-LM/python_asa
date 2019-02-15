@@ -21,7 +21,7 @@ class Output():
         if chunk.category: print("\tcategory: " + chunk.category[0])
         if chunk.semrole: print("\tsemrole: " + "|".join(chunk.semrole))
         if chunk.arg: print("\targ: " + "|".join(chunk.arg))
-        if chunk.similar > 0.0: print("\tscore: " + chunk.similar)
+        if chunk.similar > 0.0: print("\tscore: " + str(chunk.similar))
         if chunk.semantic: print("\tsemantic: " + chunk.semantic)
         modchunks = chunk.modifiedchunks
         if modchunks:
@@ -34,8 +34,8 @@ class Output():
             print("\tframe: " + ",".join(frame))
         if chunk.idiom:
             print("\tidiom: " + chunk.idiom)
-            print("\tfilter: " + chunk.idiom_score)
-            ids = [str(morph.chunk.id) + "-" + str(morph.id) for morph in chunk.idiom_morph]
+            print("\tfilter: " + str(chunk.idiom_score))
+            ids = sorted([str(morph.chunk.id) + "-" + str(morph.id) for morph in chunk.idiom_morph])
             print("\tidiom_id: " + ",".join(ids))
 
         if (chunk.phrase): print("\tphrase: " + ",".join(chunk.phrase))

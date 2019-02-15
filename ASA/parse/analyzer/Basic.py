@@ -71,7 +71,7 @@ class Basic():
                 sahen = [m.surface for m in chunk.morphs if m.id < morph.id]
                 if sahen:
                     predicate = "".join(sahen[len(sahen) - 2:len(sahen)]) + "する"
-                    head = predicate if predicate in self.frames else sahen[-1] + "する"
+                    head = predicate if self.frames.isFrame(predicate) else sahen[-1] + "する"
                 else:
                     head = "する"
             else:
@@ -88,7 +88,7 @@ class Basic():
                         predicate = mm.surface + morph.base
                     else:
                         predicate = morph.base
-                head = predicate if predicate in self.frames else morph.base
+                head = predicate if self.frames.isFrame(predicate) else morph.base
         elif chunk.ctype == "adjective":
             morph = [morph for morph in chunk.morphs if re.search(r"形容詞|形容詞,自立|形容動詞語幹", morph.pos)][0]
             if re.search(r"形容詞|形容詞,自立", morph.pos):

@@ -127,7 +127,7 @@ class Tagger():
     # @param morphs 文節中の形態素の配列
     # @return カテゴリ
     #
-    def __parseCategory(self, linkchunk: Chunk) -> list:
+    def __parseCategory(self, linkchunk: str) -> list:
         category = [d["category_name"] for d in self.categorys["dict"] if linkchunk.main in d["noun"]]
         if linkchunk.morphs:
             for morph in linkchunk.morphs:

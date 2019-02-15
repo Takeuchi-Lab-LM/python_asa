@@ -12,7 +12,7 @@ class Analyzer():
 
     def parse(self, line: str) -> Result:
         m_id = 0
-        result: Result = Result(line)
+        result = Result(line)
         tree = self.analyzer.parse(line)
         line_list = tree.toString(CaboCha.FORMAT_LATTICE).split("\n")
         for line in line_list:

@@ -1,4 +1,7 @@
-import time
+import sys
+import os
+print(os.getcwd())
+sys.path.append(os.getcwd())
 
 from init.JsonFile import JsonFile
 from load.LoadJson import LoadJson
