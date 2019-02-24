@@ -8,45 +8,43 @@ class NounStructure():
     def __init__(self, nouns: Dict, frames: Dict2):
         self.nouns = nouns
         self.frames = frames
-    #type NounSet = (Option[(Chunk, noun.Case)], Option[(Chunk, noun.Case)], Option[(Chunk, noun.Case)], Option[noun.Agent])
 
-    def __parse(self, chunk: Chunk):
-        #val comp =
+    def parse(self, chunk: Chunk):
         frame = self.nouns.getFrame(chunk.main)
         if frame:
-            #nounset =
+            nounset = []
             for instance in frame['instance']:
-                    (similar, insts) = self.__calculateSntSimilar(instance, chunk)
-                #    (similar, insts, instance.agent.headOption)
-                #}.maxBy(_._1)
-                #this.setSemantic(chunk, nounset._3)
-                #this.setFrame(nounset)
+                similar, insts = self.__calculateSntSimilar(instance, chunk)
+                agent = []
+                if 'agent' in instance:
+                    if len(instance['agent']):
+                        agent = instance['agent'][0]
+                nounset.append((similar, insts, agent))
+            nounset = max(nounset, key=lambda x: x[0])
+            self.__setSemantic(chunk, nounset[2])
+            self.__setFrame(nounset)
 
     def __calculateSntSimilar(self, instance: dict, chunk: Chunk) -> tuple:
         comb = self.__calculateAllCombinations(instance, chunk)
         insts = []
-        exit(0)
-        '''
-        while (comb.exists(_._1 > 0)) {
-            val max = comb.maxBy(pairs => pairs._1)
-            insts = insts :+ max
-            comb = comb.filterNot { arg =>
-                arg._2.eq(max._2) || arg._3.eq(max._3)
-            }
-        }
-
-        val similar = insts.map(_._1).sum
-        instance.agent
+        while(sum(c[0] for c in comb)):
+            tmp_comb = []
+            max_ = max(comb, key=lambda c: c[0])
+            insts.append(max_)
+            for c in comb:
+                if c[1] != max_[1] and c[2] != max_[2]:
+                    tmp_comb.append(c)
+            comb = tmp_comb
+        similar = sum(c[0] for c in insts)
         return (similar, insts)
-    }
-    '''
 
-    def __calculateAllCombinations(self, dict, chunk: Chunk) -> list:
+    def __calculateAllCombinations(self, instance: dict, chunk: Chunk) -> list:
         chunks = None
         if chunk.modifyingchunk:
-            chunks = chunk.modifiedchunks.append(chunk.modifyingchunk)
+            chunk.modifiedchunks.append(chunk.modifyingchunk)
+            chunks = chunk.modifiedchunks
         else:
-            chunk.modifiedchunks
+            chunks = chunk.modifiedchunks
         combinations = []
         for chunk in chunks:
             for icase in instance['cases']:
@@ -69,30 +67,23 @@ class NounStructure():
         else: similar = 0.0
         return similar
 
-'''
-    def setSemantic(chunk: Chunk, agent: Option[noun.Agent]) {
-        agent match {
-            case Some(age) =>
-                chunk.noun_agentiveL = age.agentive
-                chunk.noun_semantic = age.semantic
-            case None =>
-                chunk.noun_semantic = "Null/Null/Null"
-        }
-    }
+    def __setSemantic(self, chunk: Chunk, agent: dict) -> None:
+        if agent:
+            chunk.noun_agentiveL = agent['agentive']
+            chunk.noun_semantic = agent['semantic']
+        else:
+            chunk.noun_semantic = "Null/Null/Null"
 
-    def setFrame(set: (Float, Seq[(Float, noun.Case, Chunk)], Option[Agent])) {
-        val (similar, insts, agent) = set
-        insts.foreach { pair =>
-            val (argsimilar, icase, chunk) = pair
-            chunk.noun_semrole = icase.semrole
-            chunk.noun_arg = icase.arg
-            agent match {
-                case Some(age) if icase.arg.equals("ARG0") => chunk.noun_agentiveRole = age.arg0
-                case Some(age) if icase.arg.equals("ARG1") => chunk.noun_agentiveRole = age.arg1
-                case Some(age) if icase.arg.equals("ARG2") => chunk.noun_agentiveRole = age.arg2
-                case None =>
-            }
-        }
-    }
-}
-'''
+    def __setFrame(self, nounset: tuple) -> None:
+        similar, insts, agent = nounset
+        print(agent)
+        for pair in insts:
+            argsimilar, icase, chunk = pair
+            chunk.noun_semrole = icase['semrole']
+            chunk.noun_arg = icase['arg']
+            arg0 = agent['arg0'] if 'arg0' in agent else ''
+            arg1 = agent['arg1'] if 'arg1' in agent else ''
+            arg2 = agent['arg2'] if 'arg2' in agent else ''
+            if icase['arg'] == "ARG0": chunk.noun_agentiveRole = arg0
+            elif icase['arg'] == "ARG1": chunk.noun_agentiveRole = arg1
+            elif icase['arg'] == "ARG2": chunk.noun_agentiveRole = arg2

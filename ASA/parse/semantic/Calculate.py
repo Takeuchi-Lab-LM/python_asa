@@ -1,12 +1,6 @@
-# from result.Result import Result
-# from result.Morph import Morph
 from result.Chunk import Chunk
-# from parse.semantic.Calculate import Calculate
-# from parse.semantic.Adjunct import Adjunct
-# from parse.semantic.NounStructure import NounStructure
 
 from operator import itemgetter
-import pprint
 
 #
 # フレームより曖昧性を解消する計算を行うクラス
@@ -29,9 +23,12 @@ class Calculate():
         if frames:
             for frame in frames:
                 if 'instance' in frame:
-                    for instance in frame['instance']:
-                        similar, insts = self.__calculateSntSimilar(instance, linkchunks)
-                        frameset.append((frame['semantic'], similar, insts))
+                    if frame['instance']:
+                        for instance in frame['instance']:
+                            similar, insts = self.__calculateSntSimilar(instance, linkchunks)
+                            frameset.append((frame['semantic'], similar, insts))
+                    else:
+                        frameset.append((frame['semantic'], -1.0, []))
                 else:
                     frameset.append((frame['semantic'], -1.0, []))
         frameset = sorted(frameset, key=itemgetter(1))[0]

@@ -33,6 +33,7 @@ class Sematter():
         nounchunks = self.__getNounChunks(result)
         for nounchunk in nounchunks:
             self.nounstruct.parse(nounchunk)
+        self.__setInversedSemantic(result)
         return result
 
     #
@@ -49,7 +50,7 @@ class Sematter():
         if verbchunk.modifyingchunk and (verbchunk.modifyingchunk.ctype == 'elem'):
             can = [c.part for c in verbchunk.modifiedchunks]
             verbchunk.modifyingchunk.another_parts = {'が', 'を', 'に'} - set(can)
-            verbchunk.modifiedchunks.extend(verbchunk.modifyingchunk)
+            verbchunk.modifiedchunks.append(verbchunk.modifyingchunk)
         return verbchunk.modifiedchunks
 
     #
@@ -84,7 +85,8 @@ class Sematter():
             chunk.semrole.append(icase['semrole'])
             chunk.similar = similar
             if icase['category'] in chunk.category:
-                chunk.category = list(set(chunk.category.extend(icase['category'])))
+                chunk.category.append(icase['category'])
+                chunk.category = list(set(chunk.category))
 
     def __setArg(self, insts: list) -> None:
         for instset in insts:
@@ -92,7 +94,8 @@ class Sematter():
             if icase['arg']: chunk.arg.append(icase['arg'])
             chunk.similar = similar
             if icase['category'] in chunk.category:
-                chunk.category = list(set(chunk.category.extend(icase['category'])))
+                chunk.category.append(icase['category'])
+                chunk.category = list(set(chunk.category))
 
     def __setSpecialSemantic(self, chunk: Chunk) -> None:
         semantics = (chunk.semantic.split('-') + ['' for i in range(5)])[:5]
@@ -114,3 +117,11 @@ class Sematter():
     def __getNounChunks(self, result: Result) -> list:
         chunks = [chunk for chunk in result.chunks if self.nouns.isFrame(chunk.main)]
         return chunks
+
+    def __setInversedSemantic(self, result: Result) -> None:
+        for chunk in result.chunks:
+            self.__getModChunk(chunk)
+
+    def __getModChunk(self, chunk: Chunk) -> None:
+        if chunk.modifyingchunk:
+            chunk.modifiedchunks.append(chunk.modifyingchunk)

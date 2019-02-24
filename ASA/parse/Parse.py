@@ -3,6 +3,7 @@ from parse.analyzer.Basic import Basic
 from parse.feature.Tagger import Tagger
 from parse.idiom.Hiuchi import Hiuchi
 from parse.semantic.Sematter import Sematter
+from parse.compoundPredicate.Synonym import Synonym
 from result.Result import Result
 from load.LoadJson import LoadJson
 
@@ -16,6 +17,7 @@ class Parse():
         self.tagger = Tagger(dicts.ccharts, dicts.categorys)
         self.idiom = Hiuchi(dicts.idioms, dicts.filters)
         self.sematter = Sematter(dicts.frames, dicts.categorys, dicts.nouns)
+        self.compoundPredicate = Synonym(dicts.compoundPredicates, dicts.filters)
 
     def parse(self, line: str) -> Result:
         result = self.__parseChunk(line)
@@ -49,4 +51,5 @@ class Parse():
 
     # 複合述語の同定を行い，一部の語義と意味役割を上書きする
     def __parseCompoundPredicate(self, result: Result) -> Result:
+        self.compoundPredicate.parse(result)
         return result

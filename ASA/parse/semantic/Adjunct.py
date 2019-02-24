@@ -12,7 +12,7 @@ class Adjunct():
         for modchunk in modifiedlinks:
             modchunk.adjunct = self.__getAdjunct(modchunk)
             if modchunk.adjunct:
-                if modchunk.semrole or not (modchunk.simlar > 2.0):
+                if modchunk.semrole or not (modchunk.similar > 2.0):
                     modchunk.semrole = [modchunk.adjunct]
 
     def __getAdjunct(self, chunk: Chunk) -> str:
@@ -34,7 +34,7 @@ class Adjunct():
 
     def __parseTime(self, chunk: Chunk) -> str:
         time = ''
-        head = chunk.category[0]
+        head = chunk.category[0] if chunk.category else ''
         if head == '時間':
             if any([True if '間' in m.surface else False for m in chunk.morphs]):
                 time = '場所（時）（間）'

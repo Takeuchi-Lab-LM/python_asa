@@ -57,7 +57,7 @@ class Output():
                     frame.append(str(modchunk.id) + "-" + modchunk.noun_arg + "-" + modchunk.noun_agentiveRole)
                 elif modchunk.noun_arg:
                     frame.append(str(modchunk.id) + "-" + modchunk.noun_arg)
-                print("\tnoun_agentiveRole: " + ",".join(frame))
+            print("\tnoun_agentiveRole: " + ",".join(frame))
 
     def __outputMorph(self, morph: Morph) -> None:
         morphs = [str(morph.id), morph.surface, morph.read, morph.base, morph.pos, morph.cform, morph.ctype, morph.ne]

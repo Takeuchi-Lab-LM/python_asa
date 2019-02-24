@@ -40,7 +40,7 @@ class Tagger():
                     voice = "PASSIVE"
                 elif re.search(r"できる", morph.base) and re.search(r"動詞,自立", morph.pos):
                     voice = "POTENTIAL"
-                elif (re.search(r"せる", morph.base) and re.search(r"動詞,接尾")) or (re.search(r"もらう|いただく", morph.base) and re.search(r"動詞,非自立", morph.pos)):
+                elif (re.search(r"せる", morph.base) and re.search(r"動詞,接尾", morph.pos)) or (re.search(r"もらう|いただく", morph.base) and re.search(r"動詞,非自立", morph.pos)):
                     voice = "CAUSATIVE"
         if "elem" != chunk.ctype:
             voice = "ACTIVE"

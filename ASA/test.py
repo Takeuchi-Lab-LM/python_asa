@@ -7,26 +7,12 @@ if __name__ == '__main__':
     asa = ASA()
     init_time = time.time() - init_start
     print ("起動時間:{0}".format(init_time) + "[sec]")
-    #while(True):
-    #inp = input()
-    #if not inp:
-    #    break
-    start = time.time()
-    #asa.parse(inp)
-    asa.parse("骨を折る")
-    asa.selectOutput()
+    for line in open('testdata/test_set2.txt'):
+        start = time.time()
+        print(line)
+        asa.parse(line.strip())
+        #asa.selectOutput()
     elapsed_time = time.time() - start
     print ("elapsed_time:{0}".format(elapsed_time) + "[sec]")
     print('終了')
 
-'''
-asa.parse("今日はいい天気だ")
-asa.selectOutput()
-asa.parse("昨日はいい天気だった")
-asa.selectOutput()
-asa.parse("明日はいい天気だろう")
-asa.selectOutput()
-asa.parse("あの人は自立できる")
-asa.parse("太郎は走った")
-asa.selectOutput()
-'''
