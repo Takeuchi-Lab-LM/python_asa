@@ -48,15 +48,13 @@ class Basic():
     #  - copula:    コピュラ（AはBだ）
     #  - elem:      その他
     def __getChunkType(self, chunk: Chunk) -> str:
-        ctype = "elem"
-        for morph in chunk.morphs:
-            if re.search(r"動詞,自立", morph.pos):
-                ctype = "verb"
-            elif re.search(r"形容詞|形容詞,自立|形容動詞語幹", morph.pos):
-                ctype = "adjective"
-            elif re.search(r"特殊・ダ|特殊・デス|判定詞", morph.cform):
-                ctype = "copula"
-        return ctype
+        if any([re.search(r"動詞,自立", m.pos) for m in chunk.morphs]):
+            return 'verb'
+        elif any([re.search(r"形容詞|形容詞,自立|形容動詞語幹", m.pos) for m in chunk.morphs]):
+            return 'adjective'
+        elif any([re.search(r"特殊・ダ|特殊・デス|判定詞", m.cform) for m in chunk.morphs]):
+            return 'copula'
+        return 'elem'
 
     # その文節の主辞となるような語の取得(意味役割付与に使用)
     def __getHead(self, chunk: Chunk) -> str:
