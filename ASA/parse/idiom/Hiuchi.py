@@ -104,8 +104,8 @@ class Hiuchi():
         if pattern["cases"]:
             for idcase in pattern["cases"]:
                 if "base" in idcase: bol = bol and idcase["base"] == morph.base
-                #if "read" in idcase: bol = bol and idcase["read"] == morph.read
-                #if "pos" in idcase: bol = bol and idcase["pos"] == morph.pos
+                if "read" in idcase: bol = bol and idcase["read"] == morph.read
+                if "pos" in idcase: bol = bol and idcase["pos"] == morph.pos
         return bol
 
     #
