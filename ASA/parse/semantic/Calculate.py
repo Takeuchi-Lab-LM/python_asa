@@ -2,6 +2,7 @@ from result.Chunk import Chunk
 
 from operator import itemgetter
 
+import pprint
 #
 # フレームより曖昧性を解消する計算を行うクラス
 #
@@ -31,7 +32,7 @@ class Calculate():
                         frameset.append((frame['semantic'], -1.0, []))
                 else:
                     frameset.append((frame['semantic'], -1.0, []))
-        frameset = sorted(frameset, key=itemgetter(1))[0]
+        frameset = sorted(frameset, key=itemgetter(1))[-1]
         return frameset
 
     #
@@ -49,7 +50,7 @@ class Calculate():
                 c_part = c[1]['part'] if c[1]['part'] else ''
                 m_noun = max_[1]['noun'] if max_[1]['noun'] else ''
                 m_part = max_[1]['part'] if max_[1]['part'] else ''
-                if (c_noun + c_part != m_noun + m_part) or (c[2] != max_[2]):
+                if (c_noun + c_part != m_noun + m_part) and (c[2] != max_[2]):
                     tmp_comb.append(c)
             comb = tmp_comb
         similar = sum(c[0] for c in insts)
@@ -91,8 +92,8 @@ class Calculate():
     #
     def __getSurfSimilar(self, icase: dict, chunk: Chunk) -> float:
         similar = 0.0
-        if 'surf' in chunk.main:
-            if chunk.main.surf == icase.noun:
+        if chunk.main:
+            if chunk.main == icase['noun']:
                 similar = 1.0
             else:
                 similar = 0.0
