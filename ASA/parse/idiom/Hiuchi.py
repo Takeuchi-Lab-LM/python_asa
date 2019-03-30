@@ -1,7 +1,8 @@
 from result.Result import Result
 from result.Morph import Morph
+from functools import reduce
 
-import pprint
+from pprint import pprint as ppt
 
 # 慣用句同定のためのクラス
 # 以下の手順により同定
@@ -72,20 +73,33 @@ class Hiuchi():
     # 慣用句の候補と入力文グラフを比較し，慣用句と一致する形態素を取得
     #
     def __matchMorphs(self, morphs: Morph, patterns: list) -> list:
-        idiommorphs = []
-        candicates = []
-        for pattern in reversed(patterns):
-            precandicates = [[morph] for morph in morphs]
-            for precandicate in precandicates:
-                if self.__isMatchPattern(precandicate[0], pattern):
-                    candicates.extend(precandicate)
-            for precandicate in precandicates:
-                 for morph in precandicate[0].tree:
-                     precandicate.insert(0, morph)
-            candicates = list(set(candicates))
-            if len(candicates) == len(patterns):
-                idiommorphs.append(candicates)
+        def foldRight(f, ptt):
+            return reduce(lambda a, b: f(b, a), ptt[::-1], [])
+
+        def flatten(arry):
+            return [x for tmp in arry for x in tmp]
+
+        idiommorphs = foldRight(
+            lambda pattern, precandidates:
+                list(filter(
+                    lambda candidate:
+                        self.__isMatchPattern(candidate[0], pattern),
+                    flatten(
+                        list(map(
+                            lambda precandidate:
+                                list(map(
+                                    lambda morph:
+                                        [morph] + precandidate, precandidate[0].tree
+                                )),
+                            precandidates
+                        ))
+                    ) if precandidates else list(map(lambda m: [m], morphs))
+                )),
+                patterns
+            )
+        idiommorphs = [ms for ms in idiommorphs if len(ms) == len(patterns)]
         return idiommorphs
+
 
     #
     # resultより全ての形態素を取得
