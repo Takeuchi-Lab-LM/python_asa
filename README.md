@@ -1,4 +1,4 @@
-python_scala
+python_asa
 ====
 ASAのpython版
 
