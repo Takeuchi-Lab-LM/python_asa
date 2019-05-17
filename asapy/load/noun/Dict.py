@@ -10,7 +10,8 @@ class Dict():
                 head = frame['head'] if frame['head'] else ''
                 support = frame['support'] if frame['support'] else ''
                 bol = (head == noun) or (head + support == noun) or (head == noun[:-1]) or (head + support == noun[:-1])
-                if bol: break
+                if bol:
+                    break
         return bol
 
     def getFrame(self, noun: str) -> dict:

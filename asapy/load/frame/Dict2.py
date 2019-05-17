@@ -1,11 +1,14 @@
 import os
 
+
 class Dict2():
 
     def __init__(self, dic, json):
         self.index = {}
         self.frames = json
-        for line in open(os.path.join(os.path.abspath(os.path.dirname(__file__)))+'/../../'+dic):
+        dirname = os.path.dirname(__file__)
+        abspath = os.path.abspath(dirname)
+        for line in open(os.path.join(abspath)+'/../../'+dic):
             n = line.strip().split(' ')
             self.index.update({n[0]: (int(n[1]), int(n[2]))})
 

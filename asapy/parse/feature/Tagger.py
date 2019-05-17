@@ -36,14 +36,17 @@ class Tagger():
         voice = ""
         if chunk.morphs:
             for morph in chunk.morphs:
-                #if re.search(r"れる|られる", morph.base) and re.search(r"動詞,接尾", morph.pos):
-                if (morph.base == "れる" or morph.base == "られる") and re.search(r"動詞,接尾", morph.pos):
+                # if re.search(r"れる|られる", morph.base) and re.search(r"動詞,接尾", morph.pos):
+                if (morph.base == "れる" or morph.base == "られる") and \
+                    re.search(r"動詞,接尾", morph.pos):
                     voice = "PASSIVE"
                 elif morph.base == "できる" and re.search(r"動詞,自立", morph.pos):
                     voice = "POTENTIAL"
-                elif (morph.base == "せる" and re.search(r"動詞,接尾", morph.pos)) or (morph.base == "もらう" or morph.base == "いただく") and re.search(r"動詞,非自立", morph.pos):
+                elif (morph.base == "せる" and re.search(r"動詞,接尾", morph.pos)) or \
+                     (morph.base == "もらう" or morph.base == "いただく") and \
+                     re.search(r"動詞,非自立", morph.pos):
                     voice = "CAUSATIVE"
-        if "elem" != chunk.ctype:
+        if "elem" != chunk.ctype and not voice:
             voice = "ACTIVE"
         return voice
 
@@ -92,7 +95,7 @@ class Tagger():
             sentelem = "ADNOMINAL"
         elif re.search(r"連用", last.cform) or re.search(r"副詞", last.pos) or (re.search(r"助詞,格助詞", last.pos) and last.base == "に"):
             sentelem = "ADVERBIAL"
-        elif chunk.modifyingchunk == None:
+        elif not chunk.modifyingchunk:
             sentelem = "PREDICATE"
         else:
             sentelem = ""

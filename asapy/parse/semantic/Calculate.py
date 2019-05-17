@@ -2,7 +2,6 @@ from asapy.result.Chunk import Chunk
 
 from operator import itemgetter
 
-import pprint
 #
 # フレームより曖昧性を解消する計算を行うクラス
 #
@@ -21,6 +20,7 @@ class Calculate():
     def getFrame(self, verb: str, linkchunks: list) -> tuple:
         frameset = []
         frames = self.frames.getFrame(verb)
+        import pprint
         if frames:
             for frame in frames:
                 if 'instance' in frame:
@@ -32,6 +32,8 @@ class Calculate():
                         frameset.append((frame['semantic'], -1.0, []))
                 else:
                     frameset.append((frame['semantic'], -1.0, []))
+        print('============================')
+        pprint.pprint(frameset)
         frameset = sorted(frameset, key=itemgetter(1))[-1]
         return frameset
 
@@ -54,6 +56,9 @@ class Calculate():
                     tmp_comb.append(c)
             comb = tmp_comb
         similar = sum(c[0] for c in insts)
+        print(similar)
+        import pprint
+        pprint.pprint(insts)
         return (similar, insts)
 
     #
@@ -112,8 +117,10 @@ class Calculate():
             elif part in chunk.another_parts: similar = 1.0
             elif chunk.modifyingchunk:
                 voice = chunk.modifyingchunk.voice
-                if voice == 'CAUSATIVE' and part == icase['causative_part']: similar = 1.0
-                elif voice == 'PASSIVE' and part == icase['passive_part']: similar = 1.0
+                if 'causative_part' in icase:
+                    if voice == 'CAUSATIVE' and part == icase['causative_part']: similar = 1.0
+                if 'passive_part' in icase:
+                    if voice == 'PASSIVE' and part == icase['passive_part']: similar = 1.0
                 else: similar = 0.0
             else: similar = 0.0
         else: similar = 0.0

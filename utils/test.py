@@ -1,5 +1,5 @@
 import time
-from ASA import ASA
+from asapy.ASA import ASA
 
 if __name__ == '__main__':
 
@@ -7,7 +7,7 @@ if __name__ == '__main__':
     asa = ASA()
     init_time = time.time() - init_start
     print ("起動時間:{0}".format(init_time) + "[sec]")
-    for line in open('testdata/test_set.txt'):
+    for line in open('test_set.txt'):
         start = time.time()
         asa.parse(line.strip())
         asa.selectOutput()

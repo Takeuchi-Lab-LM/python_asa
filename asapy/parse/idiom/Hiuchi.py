@@ -2,8 +2,6 @@ from asapy.result.Result import Result
 from asapy.result.Morph import Morph
 from functools import reduce
 
-from pprint import pprint as ppt
-
 # 慣用句同定のためのクラス
 # 以下の手順により同定
 # - 形態素のグラフ化
@@ -100,7 +98,6 @@ class Hiuchi():
         idiommorphs = [ms for ms in idiommorphs if len(ms) == len(patterns)]
         return idiommorphs
 
-
     #
     # resultより全ての形態素を取得
     #
@@ -117,9 +114,12 @@ class Hiuchi():
         bol = True
         if pattern["cases"]:
             for idcase in pattern["cases"]:
-                if "base" in idcase: bol = bol and idcase["base"] == morph.base
-                if "read" in idcase: bol = bol and idcase["read"] == morph.read
-                if "pos" in idcase: bol = bol and idcase["pos"] == morph.pos
+                if "base" in idcase:
+                    bol = bol and idcase["base"] == morph.base
+                if "read" in idcase:
+                    bol = bol and idcase["read"] == morph.read
+                if "pos" in idcase:
+                    bol = bol and idcase["pos"] == morph.pos
         return bol
 
     #
@@ -153,10 +153,10 @@ class Hiuchi():
         self.__filtering(midiom)
         for chunk in chunks:
             chunk.idiom = idiom["entry"]
-            if 'phrase' in idiom: chunk.phrase = idiom["phrase"]
+            if 'phrase' in idiom:
+                chunk.phrase = idiom["phrase"]
             chunk.idiom_morph = morphs
             chunk.idiom_score = midiom.score
-
 
     #
     # フィルタリング辞書より曖昧性のスコアを計算
@@ -167,20 +167,26 @@ class Hiuchi():
         if filter_:
             filter_ = filter_[0]
             nega = posi = 0.5
-            if self.__disambiguator(filter_['negative'], idiom): nega = 0.0
-            if self.__disambiguator(filter_['positive'], idiom): posi = 1.0
+            if self.__disambiguator(filter_['negative'], idiom):
+                nega = 0.0
+            if self.__disambiguator(filter_['positive'], idiom):
+                posi = 1.0
             score = (nega + posi) / 2
         idiom.score = score
-
 
     #
     # フィルタリング辞書のposi/nega要素の一致判定
     #
     def __disambiguator(self, feature: dict, idiom: mIdiom) -> bool:
         bool_ = False
-        if 'polarity' in feature: bool_ |= (feature['polarity'] == idiom.polarity)
-        if 'sentelem' in feature: pass
-        if 'category' in feature: bool_ |= bool((set(feature['category']) & set(idiom.category)))
-        if 'mood' in feature: bool_ |= bool((set(feature['mood']) & set(idiom.mood)))
-        if 'voice' in feature: bool_ |= bool((set(feature['voice']) & set(idiom.voice)))
+        if 'polarity' in feature:
+            bool_ |= (feature['polarity'] == idiom.polarity)
+        if 'sentelem' in feature:
+            pass
+        if 'category' in feature:
+            bool_ |= bool((set(feature['category']) & set(idiom.category)))
+        if 'mood' in feature:
+            bool_ |= bool((set(feature['mood']) & set(idiom.mood)))
+        if 'voice' in feature:
+            bool_ |= bool((set(feature['voice']) & set(idiom.voice)))
         return bool_

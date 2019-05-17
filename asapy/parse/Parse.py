@@ -10,7 +10,6 @@ from asapy.load.LoadJson import LoadJson
 
 class Parse():
 
-
     def __init__(self, dicts: LoadJson, analyzertype: str) -> None:
         self.analyzer = Analyzer(analyzertype, "utf-8")
         self.basic = Basic(dicts.frames)

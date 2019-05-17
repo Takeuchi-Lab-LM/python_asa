@@ -1,5 +1,4 @@
 import json
-import sys
 import os
 from ..init.JsonFile import JsonFile
 from ..load import frame
@@ -20,7 +19,9 @@ class LoadJson():
         self.nouns = self.__loadNouns(files.noun)
 
     def __loadJson(self, jsonpath: str) -> dict:
-        with open(os.path.join(os.path.abspath(os.path.dirname(__file__)))+'/../'+jsonpath, 'r+') as f:
+        dirname = os.path.dirname(__file__)
+        abspath = os.path.abspath(dirname)
+        with open(os.path.join(abspath)+'/../'+jsonpath, 'r+') as f:
             return json.load(f)
 
     def __loadFrames(self, dic, jsonpath):
@@ -30,25 +31,3 @@ class LoadJson():
     def __loadNouns(self, jsonpath):
         nouns = noun.Dict(self.__loadJson(jsonpath))
         return nouns
-
-'''
-    def loadCategorys(self, jsonpath):
-        with open(jsonpath, 'r+') as f:
-            return json.load(f)
-
-    def loadCcharts(self, dic, jsonpath):
-        ccharts = cchart.Dict2(dic, jsonpath)
-        return ccharts
-
-    def loadIdioms(self, jsonpath):
-        with open(jsonpath, 'r+') as f:
-            return json.load(f)
-
-    def loadFilters(self, dic, jsonpath):
-        filters = filter.Dict2(dic, jsonpath)
-        return filters
-
-    def loadCompoundPredicates(self, jsonpath):
-        with open(jsonpath, 'r+') as f:
-            return json.load(f)
-'''

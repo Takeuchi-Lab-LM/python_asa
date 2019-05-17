@@ -1,10 +1,6 @@
 
 # ASAで使用する辞書を指定するクラス
-# 今はここに直書きだが，いい方法があれば変更したい
 
-import sys
-
-import glob
 
 class JsonFile():
 

@@ -1,35 +1,46 @@
 #
 # 追加詞を付与するためのクラス
 #
-from asapy.result.Result import Result
 from asapy.result.Chunk import Chunk
 
 
 class Adjunct():
 
-
     def parse(self, modifiedlinks: list) -> None:
         for modchunk in modifiedlinks:
             modchunk.adjunct = self.__getAdjunct(modchunk)
             if modchunk.adjunct:
-                if modchunk.semrole or not (modchunk.similar > 2.0):
+                if not modchunk.semrole or not (modchunk.similar > 2.0):
                     modchunk.semrole = [modchunk.adjunct]
 
     def __getAdjunct(self, chunk: Chunk) -> str:
         adjunct = ""
-        if not adjunct: adjunct = self.__parseTime(chunk)
-        if not adjunct: adjunct = self.__parseLocation(chunk)
-        if not adjunct: adjunct = self.__parseScene(chunk)
-        if not adjunct: adjunct = self.__parseInstrument(chunk)
-        # if not adjunct: adjunct = self.__parseAs(chunk)  # 追加詞の変更により削除
-        # if not adjunct: adjunct = self.__parseAround(chunk)  # 追加詞の変更により削除
-        if not adjunct: adjunct = self.__parseReason(chunk)
-        if not adjunct: adjunct = self.__parseLimit(chunk)
-        if not adjunct: adjunct = self.__parsePremise(chunk)  # 未定義
-        # if not adjunct: adjunct = self.__parseCitation(chunk)  # 追加詞の変更により削除
-        if not adjunct: adjunct = self.__parsePurpose(chunk)
-        if not adjunct: adjunct = self.__parseModificand(chunk)  # 未定義
-        if not adjunct: adjunct = self.__parseManner(chunk)  # 未定義
+        if not adjunct:
+            adjunct = self.__parseTime(chunk)
+        if not adjunct:
+            adjunct = self.__parseLocation(chunk)
+        if not adjunct:
+            adjunct = self.__parseScene(chunk)
+        if not adjunct:
+            adjunct = self.__parseInstrument(chunk)
+        # if not adjunct:
+        #     adjunct = self.__parseAs(chunk)  # 追加詞の変更により削除
+        # if not adjunct:
+        #     adjunct = self.__parseAround(chunk)  # 追加詞の変更により削除
+        if not adjunct:
+            adjunct = self.__parseReason(chunk)
+        if not adjunct:
+            adjunct = self.__parseLimit(chunk)
+        if not adjunct:
+            adjunct = self.__parsePremise(chunk)  # 未定義
+        # if not adjunct:
+        #    adjunct = self.__parseCitation(chunk)  # 追加詞の変更により削除
+        if not adjunct:
+            adjunct = self.__parsePurpose(chunk)
+        if not adjunct:
+            adjunct = self.__parseModificand(chunk)  # 未定義
+        if not adjunct:
+            adjunct = self.__parseManner(chunk)  # 未定義
         return adjunct
 
     def __parseTime(self, chunk: Chunk) -> str:
@@ -99,7 +110,6 @@ class Adjunct():
     def __parsePremise(self, chunk: Chunk) -> str:
         premise = ""
         return premise
-
 
     def __parseCitation(self, chunk: Chunk) -> str:
         citation = ''

@@ -16,23 +16,32 @@ class Output():
         print("ID: " + str(chunk.id) + " " + chunk.surface)
         print("\tlink: " + str(chunk.link))
         print("\ttype: " + chunk.ctype)
-        if chunk.main: print("\tmain: " + chunk.main)
-        if chunk.part: print("\tpart: " + chunk.part)
-        if chunk.category: print("\tcategory: " + chunk.category[0])
-        if chunk.semrole: print("\tsemrole: " + "|".join(chunk.semrole))
-        if chunk.arg: print("\targ: " + "|".join(chunk.arg))
-        if chunk.similar > 0.0: print("\tscore: " + str(round(chunk.similar, 6)))
-        if chunk.semantic: print("\tsemantic: " + chunk.semantic)
+        if chunk.main:
+            print("\tmain: " + chunk.main)
+        if chunk.part:
+            print("\tpart: " + chunk.part)
+        if chunk.category:
+            print("\tcategory: " + chunk.category[0])
+        if chunk.semrole:
+            print("\tsemrole: " + "|".join(chunk.semrole))
+        if chunk.arg:
+            print("\targ: " + "|".join(chunk.arg))
+        if chunk.similar > 0.0:
+            print("\tscore: " + str(round(chunk.similar, 6)))
+        if chunk.semantic:
+            print("\tsemantic: " + chunk.semantic)
         modchunks = chunk.modifiedchunks
         if modchunks:
             frame = []
             for modchunk in modchunks:
                 if modchunk.semrole:
                     frame_line = str(modchunk.id) + "-" + "|".join(modchunk.semrole) + "-" + "|".join(modchunk.arg)
-                    if frame_line not in frame: frame.append(frame_line)
+                    if frame_line not in frame:
+                        frame.append(frame_line)
                 else:
                     frame_line = str(modchunk.id) + "-" + modchunk.ctype
-                    if frame_line not in frame: frame.append(frame_line)
+                    if frame_line not in frame:
+                        frame.append(frame_line)
             print("\tframe: " + ",".join(frame))
         if chunk.idiom:
             print("\tidiom: " + chunk.idiom)
@@ -40,18 +49,28 @@ class Output():
             ids = sorted([str(morph.chunk.id) + "-" + str(morph.id) for morph in chunk.idiom_morph])
             print("\tidiom_id: " + ",".join(ids))
 
-        if (chunk.phrase): print("\tphrase: " + ",".join(chunk.phrase))
-        if (chunk.voice): print("\tvoice: " + chunk.voice)
-        if (chunk.tense): print("\ttense: " + chunk.tense)
-        if (chunk.sentelem): print("\tsentelem: " + chunk.sentelem)
-        if (chunk.polarity): print("\tpolarity: " + chunk.polarity)
-        if (chunk.mood): print("\tmood: " + chunk.mood)
+        if (chunk.phrase):
+            print("\tphrase: " + ",".join(chunk.phrase))
+        if (chunk.voice):
+            print("\tvoice: " + chunk.voice)
+        if (chunk.tense):
+            print("\ttense: " + chunk.tense)
+        if (chunk.sentelem):
+            print("\tsentelem: " + chunk.sentelem)
+        if (chunk.polarity):
+            print("\tpolarity: " + chunk.polarity)
+        if (chunk.mood):
+            print("\tmood: " + chunk.mood)
         for morph in chunk.morphs:
             self.__outputMorph(morph)
-        if (chunk.noun_agentiveL): print("\tnoun_adjective: " + chunk.noun_agentiveL)
-        if (chunk.noun_arg): print("\tnoun_arg: " + chunk.noun_arg)
-        if (chunk.noun_semantic): print("\tnoun_semantic: " + chunk.noun_semantic)
-        if (chunk.noun_semrole): print("\tnoun_semrole: " + chunk.noun_semrole)
+        if (chunk.noun_agentiveL):
+            print("\tnoun_adjective: " + chunk.noun_agentiveL)
+        if (chunk.noun_arg):
+            print("\tnoun_arg: " + chunk.noun_arg)
+        if (chunk.noun_semantic):
+            print("\tnoun_semantic: " + chunk.noun_semantic)
+        if (chunk.noun_semrole):
+            print("\tnoun_semrole: " + chunk.noun_semrole)
         if (chunk.noun_semantic):
             frame = []
             for modchunk in modchunks:
