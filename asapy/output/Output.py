@@ -2,10 +2,65 @@ from asapy.result.Result import Result
 from asapy.result.Chunk import Chunk
 from asapy.result.Morph import Morph
 
+import json
+
 # 解析結果を出力するためのクラス
 
 
 class Output():
+
+    def outputJson(self, result: Result) -> None:
+        result_json = {'chunks': [], 'surface': result.surface}
+        for chunk in result.chunks:
+            chunk_dic = {}
+            chunk_dic['id'] = chunk.id
+            chunk_dic['surface'] = chunk.surface
+            chunk_dic['link'] = chunk.link
+            chunk_dic['head'] = chunk.head
+            chunk_dic['fanc'] = chunk.fanc
+            chunk_dic['score'] = chunk.score
+            if chunk.modifiedchunks:
+                chunk_dic['modified'] = []
+                for mchunk in chunk.modifiedchunks:
+                    chunk_dic['modified'].append(mchunk.id)
+            chunk_dic['type'] = chunk.ctype
+            chunk_dic['main'] = chunk.main
+            if chunk.part: chunk_dic['part'] = chunk.part
+            if chunk.tense: chunk_dic['tense'] = chunk.tense
+            if chunk.voice: chunk_dic['voice'] = chunk.voice
+            if chunk.polarity: chunk_dic['polarity'] = chunk.polarity
+            if chunk.sentelem: chunk_dic['sentelem'] = chunk.sentelem
+            if chunk.mood: chunk_dic['mood'] = chunk.mood
+            if chunk.semantic: chunk_dic['semantic'] = chunk.semantic
+            if chunk.modifiedchunks:
+                chunk_dic['frames'] = []
+                for mchunk in chunk.modifiedchunks:
+                    frame_dic = {}
+                    frame_dic['id'] = mchunk.id
+                    frame_dic['semrole'] = '|'.join(mchunk.semrole)
+                    chunk_dic['frames'].append(frame_dic)
+            if chunk.semrole: chunk_dic['semrole'] = '|'.join(chunk.semrole)
+            if chunk.adjunct: chunk_dic['adjunct'] = chunk.adjunct
+            if chunk.category: chunk_dic['category'] = chunk.category
+
+            chunk_dic['morphs'] = []
+            for morph in chunk.morphs:
+                morph_dic = {}
+                morph_dic['id'] = morph.id
+                morph_dic['surface'] = morph.surface
+                morph_dic['pos'] = morph.pos
+                morph_dic['cform'] = morph.cform
+                morph_dic['ctype'] = morph.ctype
+                morph_dic['base'] = morph.base
+                morph_dic['read'] = morph.read
+                morph_dic['pos'] = morph.pos
+                if morph.forms:
+                    morph_dic['forms'] = []
+                    for form in morph.forms:
+                        morph_dic['forms'].append(form)
+                chunk_dic['morphs'].append(morph_dic)
+            result_json['chunks'].append(chunk_dic)
+        return result_json
 
     def outputAll(self, result: Result) -> None:
         print("sentence: " + result.surface)

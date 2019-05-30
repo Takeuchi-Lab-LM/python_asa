@@ -22,3 +22,6 @@ class ASA():
     def selectOutput(self, otype: str = "all") -> None:
         if otype == "all":
             self.output.outputAll(self.result)
+
+    def dumpJson(self) -> dict:
+        return self.output.outputJson(self.result)
