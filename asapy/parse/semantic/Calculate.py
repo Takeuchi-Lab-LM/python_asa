@@ -20,7 +20,6 @@ class Calculate():
     def getFrame(self, verb: str, linkchunks: list) -> tuple:
         frameset = []
         frames = self.frames.getFrame(verb)
-        import pprint
         if frames:
             for frame in frames:
                 if 'instance' in frame:
@@ -32,8 +31,6 @@ class Calculate():
                         frameset.append((frame['semantic'], -1.0, []))
                 else:
                     frameset.append((frame['semantic'], -1.0, []))
-        print('============================')
-        pprint.pprint(frameset)
         frameset = sorted(frameset, key=itemgetter(1))[-1]
         return frameset
 
@@ -56,9 +53,6 @@ class Calculate():
                     tmp_comb.append(c)
             comb = tmp_comb
         similar = sum(c[0] for c in insts)
-        print(similar)
-        import pprint
-        pprint.pprint(insts)
         return (similar, insts)
 
     #
