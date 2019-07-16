@@ -5,7 +5,7 @@ python版日本語意味役割付与システム（ASA）
 ## 動作環境
 - Python 3.5 以上
 - cabochaをpythonで使えるようにしておく
--- cabochaのダウンロード→ https://taku910.github.io/cabocha/
+- cabochaのダウンロード→ https://taku910.github.io/cabocha/
 
 ## インストール
 ```git clone {url} ```
@@ -13,5 +13,5 @@ python版日本語意味役割付与システム（ASA）
 ```pip install -e python_asa```
 
 ## 使用方法
-```cd asapy```で```asapy```内に入り、
+```cd asapy```でディレクトリを移動し、
 ```python main.py``` で起動して標準入力を受け付けます。
