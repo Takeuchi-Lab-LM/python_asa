@@ -5,7 +5,7 @@ python版日本語意味役割付与システム（ASA）
 ## 動作環境
 - Python 3.5 以上
 - cabochaをpythonで使えるようにしておく
-- cabochaのダウンロード→ https://taku910.github.io/cabocha/
+- cabochaのダウンロード https://taku910.github.io/cabocha/
 
 ## インストール
 ```git clone {url} ```
