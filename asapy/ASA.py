@@ -3,7 +3,7 @@ from asapy.load.LoadJson import LoadJson
 from asapy.parse.Parse import Parse
 from asapy.output.Output import Output
 
-from memory_profiler import profile
+#from memory_profiler import profile
 
 
 class ASA():
