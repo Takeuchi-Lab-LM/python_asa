@@ -1,5 +1,5 @@
 
-from ASA import ASA
+from asapy.ASA import ASA
 
 # 正解データとASAの解析結果の比較
 
