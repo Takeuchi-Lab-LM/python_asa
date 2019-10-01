@@ -115,7 +115,7 @@ class Tagger():
             elif morph.base == "な" and re.search(r"助詞,終助詞", morph.pos):
                 mood_list.append("PROHIBITIVE")
             elif morph.base == "たい" and re.search(r"助動詞", morph.pos):
-                mood_list.append("PROHIBITIVE")
+                mood_list.append("DESIRE")
             elif morph.base == "?" or (morph.base == "か" and re.search("／", morph.pos)):
                 mood_list.append("INTERROGATIVE")
         if mood_list:
