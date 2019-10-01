@@ -60,6 +60,13 @@ class Tagger():
         isPast = False
         if chunk.morphs:
             isPast = bool([morph for morph in chunk.morphs if re.search(r"助動詞", morph.pos) and morph.base in ["た", "き", "けり"]])
+            if not isPast:
+                before_morph = ""
+                for morph in chunk.morphs:
+                    if re.search(r"助動詞", morph.pos) and morph.base == "だ":
+                        if "連用" in before_morph.ctype:
+                            isPast = True
+                    before_morph = morph
         if isPast:
             tense = "PAST"
         else:
