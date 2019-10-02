@@ -43,6 +43,7 @@ class Tagger():
                 elif morph.base == "できる" and re.search(r"動詞,自立", morph.pos):
                     voice = "POTENTIAL"
                 elif (morph.base == "せる" and re.search(r"動詞,接尾", morph.pos)) or \
+                     (morph.base == "させる" and re.search(r"動詞,接尾", morph.pos)) or \
                      (morph.base == "もらう" or morph.base == "いただく") and \
                      re.search(r"動詞,非自立", morph.pos):
                     voice = "CAUSATIVE"
