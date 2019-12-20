@@ -91,7 +91,7 @@ class Basic():
             morph = [morph for morph in chunk.morphs if re.search(r"形容詞|形容詞,自立|形容動詞語幹", morph.pos)][0]
             if re.search(r"形容詞|形容詞,自立", morph.pos):
                 head = morph.base
-            elif re.search(r"形容詞語幹", morph.pos):
+            elif re.search(r"形容動詞語幹", morph.pos):
                 ispremorph = [m for m in chunk.morphs if m.id == morph.id - 1]
                 if ispremorph:
                     premorph = ispremorph[0]
