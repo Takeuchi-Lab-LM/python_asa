@@ -143,7 +143,7 @@ class Tagger():
                         category.append("数値")
                 if morph.pos in ["名詞,固有名詞,人名", "名詞,接尾,人名"]:
                     category.append("人")
-                elif morph.pos in ["名詞,固有名詞,地域", "名詞,接尾,地域"]:
+                elif morph.pos in ["名詞,固有名詞,地域,一般", "名詞,固有名詞,地域,国", "名詞,接尾,地域"]:
                     category.append("場所")
                 elif morph.pos in ["名詞,固有名詞,組織"]:
                     category.append("組織")
