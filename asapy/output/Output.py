@@ -138,4 +138,3 @@ class Output():
     def __outputMorph(self, morph: Morph) -> None:
         morphs = [str(morph.id), morph.surface, morph.read, morph.base, morph.pos, morph.cform, morph.ctype, morph.ne]
         print("\t\t" + "\t".join(morphs))
-

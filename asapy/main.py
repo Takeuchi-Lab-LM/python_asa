@@ -16,8 +16,6 @@ if __name__ == '__main__':
         start = time.time()
         asa.parse(inp)
         asa.selectOutput()
-        # import pprint
-        # pprint.pprint(asa.dumpJson())
         elapsed_time = time.time() - start
         print("elapsed_time:{0}".format(elapsed_time) + "[sec]")
     print('終了')

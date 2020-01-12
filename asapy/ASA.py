@@ -3,12 +3,12 @@ from asapy.load.LoadJson import LoadJson
 from asapy.parse.Parse import Parse
 from asapy.output.Output import Output
 
-from memory_profiler import profile
+#from memory_profiler import profile
 
 
 class ASA():
 
-    @profile  # memory使用量を確認
+    #@profile  # memory使用量を確認
     def __init__(self, analyzer: str = "cabocha") -> None:
         files = JsonFile()
         self.result = None

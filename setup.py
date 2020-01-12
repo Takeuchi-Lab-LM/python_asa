@@ -9,7 +9,7 @@ setup(
     name='asapy',  # Required
     version='1.0.0',  # Required
     description='Python版ASA',  # Optional
-    author='T Lab',  # Optional
+    author='Takeuchi-Lab-LM',
     author_email='asarel@cl.cs.okayama-u.ac.jp',  # Optional
     classifiers=[  # Optional
         'Development Status :: 3 - Alpha',
