@@ -30,7 +30,9 @@ Here is an example. The bracket [ ] indicates a chunk, and the numbers are chunk
 > [0 1 Taro-no]  [1 3 hon-o] [2 3 ken-ga] [3 -1 sutet-a (dumped)]
 
 In this example, output of ASA as a predicate-aruments  is
+
 > [arg0 健が]  [arg1 本を]   [v 捨てた]  
+
 Thus [太郎の] chunk is not extracted. If you want to get a correct phrase of arg1, i.e.,
 [arg1   太郎の本を],  you have to extract [太郎の] chunk by following chunk dependency links.  
 
@@ -38,11 +40,12 @@ Thus [太郎の] chunk is not extracted. If you want to get a correct phrase of 
 Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus] (http://pth.cl.cs.okayama-u.ac.jp/). The system uses a simple approach based on rule-based technique, then the accuracy is not high.
 
 ## Example of how we can get a set of predicate-arguments.
-Input sentence: 太郎は6時に次郎を追いかけた。
-Outpu: ['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]
+> Input sentence: 太郎は6時に次郎を追いかけた。
+> Outpu: ['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]
 
-getpas.py
-'''
+> getpas.py
+
+```
 from ASA import ASA
 
 def out_predarg(result_chunks):
@@ -72,4 +75,4 @@ if __name__ == '__main__':
         print (result_json['surface']) # input sentence
         result_chunks = result_json['chunks']
         out_predarg(result_chunks)
-'''
+```
