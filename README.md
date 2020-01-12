@@ -41,7 +41,8 @@ Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus] (
 
 ## Example of how we can get a set of predicate-arguments.
 > Input sentence: 太郎は6時に次郎を追いかけた。
-> Outpu: ['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]
+
+> Output ['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]
 
 > getpas.py
 
