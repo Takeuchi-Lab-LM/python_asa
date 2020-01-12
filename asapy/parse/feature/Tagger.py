@@ -43,6 +43,7 @@ class Tagger():
                 elif morph.base == "できる" and re.search(r"動詞,自立", morph.pos):
                     voice = "POTENTIAL"
                 elif (morph.base == "せる" and re.search(r"動詞,接尾", morph.pos)) or \
+                     (morph.base == "させる" and re.search(r"動詞,接尾", morph.pos)) or \
                      (morph.base == "もらう" or morph.base == "いただく") and \
                      re.search(r"動詞,非自立", morph.pos):
                     voice = "CAUSATIVE"
@@ -60,6 +61,13 @@ class Tagger():
         isPast = False
         if chunk.morphs:
             isPast = bool([morph for morph in chunk.morphs if re.search(r"助動詞", morph.pos) and morph.base in ["た", "き", "けり"]])
+            if not isPast:
+                before_morph = ""
+                for morph in chunk.morphs:
+                    if re.search(r"助動詞", morph.pos) and morph.base == "だ":
+                        if "連用" in before_morph.ctype:
+                            isPast = True
+                    before_morph = morph
         if isPast:
             tense = "PAST"
         else:
@@ -115,7 +123,7 @@ class Tagger():
             elif morph.base == "な" and re.search(r"助詞,終助詞", morph.pos):
                 mood_list.append("PROHIBITIVE")
             elif morph.base == "たい" and re.search(r"助動詞", morph.pos):
-                mood_list.append("PROHIBITIVE")
+                mood_list.append("DESIDERATIVE")
             elif morph.base == "?" or (morph.base == "か" and re.search("／", morph.pos)):
                 mood_list.append("INTERROGATIVE")
         if mood_list:
@@ -143,7 +151,7 @@ class Tagger():
                         category.append("数値")
                 if morph.pos in ["名詞,固有名詞,人名", "名詞,接尾,人名"]:
                     category.append("人")
-                elif morph.pos in ["名詞,固有名詞,地域", "名詞,接尾,地域"]:
+                elif morph.pos in ["名詞,固有名詞,地域,一般","名詞,固有名詞,地域,国", "名詞,接尾,地域"]:
                     category.append("場所")
                 elif morph.pos in ["名詞,固有名詞,組織"]:
                     category.append("組織")

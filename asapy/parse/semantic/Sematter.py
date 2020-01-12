@@ -62,7 +62,7 @@ class Sematter():
         for chunk in chunks:
             for morph in chunk.morphs:
                 if '格助詞' in morph.pos and chunk.part in {'に', 'へ'}:
-                    chunk.another_parts = [{'に', 'へ'} - set(chunk.part)]
+                    chunk.another_parts = list({'に', 'へ'} - set(chunk.part))
                 elif '係助詞' in morph.pos:
                     chunk.another_parts = ['が', 'を']
                 else:
