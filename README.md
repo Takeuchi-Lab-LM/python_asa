@@ -27,7 +27,8 @@ This predicate-argument analyzer (ASA) is detecting a set of predicate-arguments
 Here is an example. The bracket [ ] indicates a chunk, and the numbers are chunk id and its head chunk id.
 
 > [0 1 太郎の] [1 3 本を] [2 3 健が] [3 -1 捨てた]
-> [0 1 Taro-no]  [1 3 hon-o] [2 3 ken-ga] [3 -1 sutet-a (dumped)]
+> 
+> [0 1 Taro-[Small caps]{.smallcaps}]  [1 3 hon-o] [2 3 ken-ga] [3 -1 sutet-a (dumped)]
 
 In this example, output of ASA as a predicate-aruments  is
 
@@ -37,7 +38,7 @@ Thus [太郎の] chunk is not extracted. If you want to get a correct phrase of 
 [arg1   太郎の本を],  you have to extract [太郎の] chunk by following chunk dependency links.  
 
 ## Accuracy of detecting semantic role labels.
-Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus] (http://pth.cl.cs.okayama-u.ac.jp/). The system uses a simple approach based on rule-based technique, then the accuracy is not high.
+Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The system uses a simple approach based on rule-based technique, then the accuracy is not high.
 
 ## Example of how we can get a set of predicate-arguments.
 > Input sentence: 太郎は6時に次郎を追いかけた。
@@ -46,7 +47,7 @@ Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus] (
 
 > getpas.py
 
-```
+```python
 from ASA import ASA
 
 def out_predarg(result_chunks):
