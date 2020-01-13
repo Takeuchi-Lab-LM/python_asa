@@ -1,3 +1,13 @@
+#misc
+
+__pycache__/
+.mypy_cache/
+build/
+dist/
+*egg-info/
+testdata/
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
