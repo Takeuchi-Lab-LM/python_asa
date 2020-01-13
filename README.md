@@ -22,25 +22,27 @@ python版日本語意味役割付与システム（ASA）
 
 This analyzer extracts predicate-argument structures in Japanese sentences based on the predicate frame file [Predicate Thesaurus (PT)](http://pth.cl.cs.okayama-u.ac.jp/testp/pth/Vths), which is constructed under Project of Constructing Japanese Thesaurus of Predicate-Argument Structure. Thus, ASA may fail to detect some predicate-argument structures in the cases which the predicates are not registered in PT. Although PT currently contains more than about 10,000 predicates, there may remains some bugs since the thesaurus is under construction.
 
-This predicate-argument analyzer (ASA) detects a set of predicate-arguments based on chunk dependency. Since dependency is not phrasal based, you need to follow the dependency links when you want to get a phrase.
+The predicate-argument analyzer (ASA) detects a set of predicate-arguments based on chunk dependency. Since dependency is not phrasal based, you need to follow the dependency links when you want to get a phrase.
 
-Here is an example. The bracket [ ] indicates a chunk, and the numbers are chunk id and its head chunk id.
+In the following example, the square brackets [ ] indicates a chunk. The numbers are chunk id and its head chunk id.
 
 > [0 1 太郎の] [1 3 本を] [2 3 健が] [3 -1 捨てた]
 > 
 > [0 1 Taro-[gen]{.smallcaps}]  [1 3 hon-[acc]{.smallcaps}] [2 3 ken-[nom]{.smallcaps}] [3 -1 sutet-a (dumped)]
 
-In this example, output of ASA as a predicate-aruments  is
+In this example, the output of ASA (the predicate-aruments of 太郎の本を健が捨てた) is
 
 > [arg0 健が]  [arg1 本を]   [v 捨てた]  
 
-Thus [太郎の] chunk is not extracted. If you want to get a correct phrase of arg1, i.e.,
+Thus the dative chunk [太郎の] is not extracted. If you want to get a correct phrase of arg1, i.e.,
 [arg1   太郎の本を],  you have to extract [太郎の] chunk by following chunk dependency links.  
 
-## Accuracy of detecting semantic role labels.
-Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The system uses a simple approach based on rule-based technique, then the accuracy is not high.
+## Accuracy of detecting semantic role labels
+
+Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The system uses a simple approach based on rule-based technique, then the accuracy is not high enough.
 
 ## Example of how we can get a set of predicate-arguments.
+
 > Input sentence: 太郎は6時に次郎を追いかけた。
 
 > Output ['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]
