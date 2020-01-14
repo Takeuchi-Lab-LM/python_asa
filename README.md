@@ -27,11 +27,11 @@ python版日本語意味役割付与システム（ASA）
 
 ASA extracts predicate-argument structures in Japanese sentences based on the predicate frame file [Predicate Thesaurus (PT)](http://pth.cl.cs.okayama-u.ac.jp/testp/pth/Vths), which is constructed under Project of Constructing Japanese Thesaurus of Predicate-Argument Structure. Thus, ASA may fail to detect some predicate-argument structures in the cases which the predicates are not registered in PT. Although PT currently contains more than about 10,000 predicates, there may remains some bugs since the thesaurus is under construction.
 
-ASA detects a set of predicate-arguments based on chunk dependency. Since the dependency used in this analyzer is not phrasal based, you need to follow the dependency links if a full phrase is necessary.
+ASA detects a set of predicate-arguments based on chunk dependency. Since the dependency unit employed in this analyzer is not phrasal based, you need to follow the dependency links if a full phrase is necessary.
 
 When you input a Japanese sentence, 「太郎の本を健が捨てた」*Ken threw Taro's book away*, for instance,
 ASA punctuates it into several chunks, as shown below. 
-The square brackets [ ] signify the boundaries of a chunk. The chunk IDs and head chunk IDs are also assigned in the brackets.
+The square brackets `[ ]` signify the boundaries of a chunk. The chunk IDs and head chunk IDs are also assigned in the brackets.
 
 ```
 [0 1 太郎の] [1 3 本を] [2 3 健が] [3 -1 捨てた]
@@ -47,12 +47,12 @@ ASA returns the predicate-arguments of the sentence as:
  [arg0 健が] [arg1 本を] [v 捨てた]  
 ```
 
-Here, the dative chunk [太郎の] in the noun phrase 太郎の本 is ignored. In order to get a complete phrase of arg1, i.e.,
-[arg1 太郎の本を], you have to follow the chunk dependency links and extract [太郎の] chunk.  
+Here, the dative chunk [太郎の] in the noun phrase 太郎の本 is ignored. In order to get a complete phrase of `arg1`, i.e.,
+`[arg1 太郎の本を]`, you have to follow the chunk dependency links and extract the chunk [太郎の].  
 
 ## Accuracy of detecting semantic role labels
 
-Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The accuracy is not high enough, as the system uses a simple approach based on a rule-based technique.
+Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The accuracy is not high enough, as the system utilizes a simple, rule-based approach.
 
 ## How to get a set of predicate-arguments
 
