@@ -27,9 +27,9 @@ python版日本語意味役割付与システム（ASA）
 
 ASA extracts predicate-argument structures in Japanese sentences based on the predicate frame file [Predicate Thesaurus (PT)](http://pth.cl.cs.okayama-u.ac.jp/testp/pth/Vths), which is constructed under Project of Constructing Japanese Thesaurus of Predicate-Argument Structure. Thus, ASA may fail to detect some predicate-argument structures in the cases which the predicates are not registered in PT. Although PT currently contains more than about 10,000 predicates, there may remains some bugs since the thesaurus is under construction.
 
-ASA detects a set of predicate-arguments based on chunk dependency. Since the dependency used in this analyzer is not phrasal based, you need to follow the dependency links when you want to get a phrase.
+ASA detects a set of predicate-arguments based on chunk dependency. Since the dependency used in this analyzer is not phrasal based, you need to follow the dependency links if a full phrase is necessary.
 
-When you input a Japanese sentence, 「太郎の本を健が捨てた」*Ken threw Ken's book away*, for instance,
+When you input a Japanese sentence, 「太郎の本を健が捨てた」*Ken threw Taro's book away*, for instance,
 ASA punctuates it into several chunks, as shown below. 
 The square brackets [ ] signify the boundaries of a chunk. The chunk IDs and head chunk IDs are also assigned in the brackets.
 
