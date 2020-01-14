@@ -1,7 +1,11 @@
-# python_asa
+(English description of the programme follows Japanese)
+
+# `python_asa`
+
 python版日本語意味役割付与システム（ASA）
 
 ## 動作環境
+
 - Python 3.5 以上
 - cabochaをpythonで使えるようにしておく
 - cabochaのダウンロード https://taku910.github.io/cabocha/
@@ -16,38 +20,47 @@ python版日本語意味役割付与システム（ASA）
 ```python main.py``` で起動して標準入力を受け付けます。
 
 ## 変更点
+
 - 2020/1/12 バグの修正．辞書構造をJsonに変更．moodなど動詞ムードなどの判定変更．semroleの場所判定の修正．願望(DESIDERATIVE)を追加．
 
-## About ASA (Argument Structure Analyzer) and ASA python
+# Argument Structure Analyzer (ASA) and ASA python
 
-This analyzer extracts predicate-argument structures in Japanese sentences based on the predicate frame file [Predicate Thesaurus (PT)](http://pth.cl.cs.okayama-u.ac.jp/testp/pth/Vths), which is constructed under Project of Constructing Japanese Thesaurus of Predicate-Argument Structure. Thus, ASA may fail to detect some predicate-argument structures in the cases which the predicates are not registered in PT. Although PT currently contains more than about 10,000 predicates, there may remains some bugs since the thesaurus is under construction.
+ASA extracts predicate-argument structures in Japanese sentences based on the predicate frame file [Predicate Thesaurus (PT)](http://pth.cl.cs.okayama-u.ac.jp/testp/pth/Vths), which is constructed under Project of Constructing Japanese Thesaurus of Predicate-Argument Structure. Thus, ASA may fail to detect some predicate-argument structures in the cases which the predicates are not registered in PT. Although PT currently contains more than about 10,000 predicates, there may remains some bugs since the thesaurus is under construction.
 
-The predicate-argument analyzer (ASA) detects a set of predicate-arguments based on chunk dependency. Since dependency is not phrasal based, you need to follow the dependency links when you want to get a phrase.
+ASA detects a set of predicate-arguments based on chunk dependency. Since the dependency used in this analyzer is not phrasal based, you need to follow the dependency links when you want to get a phrase.
 
-In the following example, the square brackets [ ] indicates a chunk. The numbers are chunk id and its head chunk id.
+When you input a Japanese sentence, 「太郎の本を健が捨てた」*Ken threw Ken's book away*, for instance,
+ASA punctuates it into several chunks, as shown below. 
+The square brackets [ ] signify the boundaries of a chunk. The chunk IDs and head chunk IDs are also assigned in the brackets.
 
-> [0 1 太郎の] [1 3 本を] [2 3 健が] [3 -1 捨てた]
-> 
-> [0 1 Taro-[gen]{.smallcaps}]  [1 3 hon-[acc]{.smallcaps}] [2 3 ken-[nom]{.smallcaps}] [3 -1 sutet-a (dumped)]
+```
+[0 1 太郎の] [1 3 本を] [2 3 健が] [3 -1 捨てた]
+```
 
-In this example, the output of ASA (the predicate-aruments of 太郎の本を健が捨てた) is
+>[0 1 Taro-no]  [1 3 hon-wo] [2 3 Ken-ga] [3 -1 suteta]
+>
+>[0 1 Taro-ɢᴇɴ]  [1 3 book-ᴀᴄᴄ] [2 3 Ken-ɴᴏᴍ] [3 -1 throw.away]
 
-> [arg0 健が]  [arg1 本を]   [v 捨てた]  
+ASA returns the predicate-arguments of the sentence as: 
 
-Thus the dative chunk [太郎の] is not extracted. If you want to get a correct phrase of arg1, i.e.,
-[arg1   太郎の本を],  you have to extract [太郎の] chunk by following chunk dependency links.  
+```
+ [arg0 健が] [arg1 本を] [v 捨てた]  
+```
+
+Here, the dative chunk [太郎の] in the noun phrase 太郎の本 is ignored. In order to get a complete phrase of arg1, i.e.,
+[arg1 太郎の本を], you have to follow the chunk dependency links and extract [太郎の] chunk.  
 
 ## Accuracy of detecting semantic role labels
 
-Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The system uses a simple approach based on rule-based technique, then the accuracy is not high enough.
+Accuracy of semantic role labeling is about 60% evaluated on [BCCWJ-PT corpus](http://pth.cl.cs.okayama-u.ac.jp/). The accuracy is not high enough, as the system uses a simple approach based on a rule-based technique.
 
-## Example of how we can get a set of predicate-arguments.
+## How to get a set of predicate-arguments
 
 > Input sentence: 太郎は6時に次郎を追いかけた。
 
-> Output ['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]
+> Output: `['追いかける', ['太郎は', '対象'], ['6時に', '場所（時）（点）'], ['次郎を', '']]`
 
-> getpas.py
+### getpas.py
 
 ```python
 from ASA import ASA
