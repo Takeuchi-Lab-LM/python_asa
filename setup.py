@@ -21,5 +21,6 @@ setup(
         'Programming Language :: Python :: 3.7',
     ],
 
-    packages=['asapy'],  # Required
+    packages=["asapy","asapy.dict","asapy.init","asapy.load","asapy.load.cchart","asapy.load.filter","asapy.load.frame","asapy.load.noun","asapy.output","asapy.parse","asapy.parse.analyzer","asapy.parse.compoundPredicate","asapy.parse.feature","asapy.parse.idiom","asapy.parse.semantic","asapy.result"],  # Required
+    package_data={"asapy":["dict/*"]},
 )
