@@ -11,9 +11,7 @@ python版日本語意味役割付与システム（ASA）
 - cabochaのダウンロード https://taku910.github.io/cabocha/
 
 ## インストール
-```git clone {url} ```
-
-```pip install -e python_asa```
+```pip install git+https://github.com/Takeuchi-Lab-LM/python_asa```
 
 ## 使用方法
 ```cd asapy```でディレクトリを移動し、
