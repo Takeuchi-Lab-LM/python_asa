@@ -1,6 +1,5 @@
 import time
-import json #hikaku you
-#import xlrd # pip install xlrd xlsxファイルに対応しなくなったらしい
+#import xlrd # pip install xlrd => xlsxファイルに対応しなくなったらしい
 import openpyxl #pip install openpyxl
 from ASA import ASA
 
@@ -22,6 +21,9 @@ if __name__ == '__main__':
     case3 = [cell[0][18].value,cell[0][19].value,cell[0][20].value,cell[0][21].value,cell[0][22].value,cell[0][23].value,cell[0][24].value]
     case4 = [cell[0][25].value,cell[0][26].value,cell[0][27].value,cell[0][28].value,cell[0][29].value,cell[0][30].value,cell[0][31].value]
     case5 = [cell[0][32].value,cell[0][33].value,cell[0][34].value,cell[0][35].value,cell[0][36].value,cell[0][37].value,cell[0][38].value]
+    semantic = "{}-{}-{}-{}-"
+    semantic = semantic.format(cell[0][40].value,cell[0][41].value,cell[0][42].value,cell[0][43].value)
+    print(semantic)
 
     print(case1)
     print(case2)
@@ -32,15 +34,17 @@ if __name__ == '__main__':
     #print(result.chunks[0].surface)
 
     for chunk in result.chunks:
-        if chunk.arg:
-            print(chunk.arg[0] in case1)
-            print(case1)
-            print(chunk.arg[0])
+        if chunk.ctype == "elem":
+            if chunk.arg:
+                if chunk.arg[0] in case1 and chunk.surface in case1 and chunk.semrole[0] in case1:
+                    #accurateの変数にインクリメント? for文のせいで複数回されそう=>True,Falseを返して最後にインクリメントするか
+                    print("HAPPY")
+        if chunk.ctype == "verb":
+            if chunk.semantic:
+                if chunk.semantic == semantic:
+                    print("HAPPY2")
 
-    #jsonを通す必要はなさそう？
-    #data = asa.dumpJson()
-    #with open('result.json',mode='w',encoding='utf-8') as file:
-    #    json.dump(data, file, ensure_ascii=False, indent=2)
+
     elapsed_time = time.time() - start
     print("elapsed_time:{0}".format(elapsed_time) + "[sec]")
     print('終了')

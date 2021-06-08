@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import time
-import json #hikaku you
 from ASA import ASA
 
 if __name__ == '__main__':
@@ -17,10 +16,6 @@ if __name__ == '__main__':
         start = time.time()
         asa.parse(inp)
         asa.selectOutput()
-        #比較用
-        data = asa.dumpJson()
-        with open('result.json',mode='w',encoding='utf-8') as file:
-            json.dump(data, file, ensure_ascii=False, indent=2)
         elapsed_time = time.time() - start
         print("elapsed_time:{0}".format(elapsed_time) + "[sec]")
     print('終了')
