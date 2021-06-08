@@ -1,0 +1,105 @@
+◎述語項構造シソーラス 20210305版 (ベータ版)  2020年3月5日 竹内孔一
+(Predicate-Argument Structure Thesaurus)
+下記の2018年版の述語項構造シソーラスの更新を行いました．
+内容 辞書 pth20210305.xlsx
+概念フレーム frame_description.xlsx
+この説明  readme-PT20210305.txt
+
+変更点は下記の通り
+・配付は xlsx形式のみとし，概念形式としてPropbankのように意味役割の意味を記述した frame_description.xlsxを作成した
+・PropBank形式の意味役割 Arg0, Arg1 などをフレーム毎に統一しながら追加整備した
+・各概念フレームはidで管理する．pth20210305.xlsx のAT列 frame_idが概念フレーム番号
+- 概念フレームの内容(取り得る意味役割のパターン)を frame_description.xlsxに記載
+  frame_description.xlsxにおけるA列の番号がframe_idに対応
+  B列が概念フレームの名前の意味役割とPropBank形式の意味役割の代表的な例
+  F列が概念フレーム内で使われる必須の意味役割(PropBank形式)の説明
+
+現段階でのPopBank形式の意味役割について
+Arg0
+Arg1
+Arg2
+Arg3
+Arg4
+ArgM_DIR 方向
+ArgM_LOC 場所
+ArgM_EXT 程度
+ArgM_CAU 原因
+ArgM_PRP 目的
+ArgM_MNR 様態
+ArgM_TMP 時間
+ArgM_ADV 副詞相当
+ArgM_MNS 手段 (means)
+ArgM_CND 条件 
+ArgM_MDF 修飾 (modifier)
+ArgM_REC 相互 (付加詞のとき) 
+ArgM_SCP 領域 scope (ある範囲をしめす付加詞)
+ArgM_CRT 基準 criterion (基準の付加詞)
+
+ArgM_PRX 連語 
+ArgM_AND 順接 
+ArgM_BUT 逆接 
+ArgM_CMP 補語相当 の付加詞 
+ArgM_SPK 話者 (話し手が NPCMJに出てくるので．特別なタグ) 
+
+ArgA 使役 必須項で付加される物
+ArgE 経験者の必須　間接受け身で付加される物
+ArgR 「V合う」で付加される必須の相互 (syntactic なのかな) そうし合う
+
+
+
+◎述語項構造シソーラス 20180828版データについて 2018年9月25日 竹内孔一
+(Predicate-Argument Structure Thesaurus)
+下記の2014年版の述語項構造シソーラスの更新を行いました．変更点は下記の通り
+
+・意味役割にARG0,ARG1, ArgM-TMPなどPropBankスタイルの意味役割を付与した．
+・例文に記号が入ってるなどバグを修正した．
+・pth*.csvのAJ列にある語彙概念構造との対応で，半角/全角の違いによる重複した語彙概念構造があったので重複を削除し，pth*.csvのAJ列のidと frame*.csv内の語彙概念構造との対応を取り直した．
+・xlsxファイルも追加した
+以上です．
+
+
+◎述語項構造シソーラス 20141026版データについて 2016年1月8日　竹内孔一
+(Predicate-Argument Structure Thesaurus)
+
+シソーラスのデータの方を圧縮したデータです．
+http://pth.cl.cs.okayama-u.ac.jp/vth/vths
+ここのものと同じです．
+
+ファイル:
+  readme-PT.txt: このファイル
+  pth日付-文字種.csv: シソーラス本体
+  frame-文字種.csv: pth*.csvのAJ列にあるフレームidに対応したフレーム名
+
+注意1: 文字コードはutf-8版とsjis版です．各カラムはカンマで区切られていて，各要素は二重引用符で
+くくられています．格の指定などで，1つの要素の中にカンマを使って併記している例があるので
+かならず二重引用符を１つの単位として処理して下さい．
+
+注意2: frame*.csvでは括弧の半角・全角などで同じようなものがズレた表記になっています．
+このあたりは後ほど修正します．
+
+各列の詳細な説明というのはあまりないのですが，動詞だけのときの説明とほとんど同様です．
+http://www.cl.cs.okayama-u.ac.jp/rsc/data
+格1〜格5は作業の見やすさのためにわけた列で，深層格，表層格が意味役割体系です．
+
+Webページで書いてるモノとすこし違うところがありますが，数は同じです．
+異なる点
+   本データ内　=>  Web 
+1) 場所(時(点)) =>  時間(点)　時間関係がこれで今後Webの方に合わせる予定
+   場所(時(間))，場所(時(毎))もあるが同様．基本的には，場所(時)にする予定
+2) (?) という信頼度の低い無い場合に意味役割にマークが付いている
+
+BCCWJの付与コーパスの公開が公開されています．BCCWJの利用アカウントが発行されると
+https://bccwj-data.ninjal.ac.jp/mdl/
+からdownloadできます．
+
+ライセンスはMITライセンスです．
+ご使用の際はなに述語シソーラス関連の発表を引用していただけるとありがたいです．
+Webサイト: http://www.pth.cl.cs.okayama-u.ac.jp/
+
+論文: Koichi Takeuchi, Kentaro Inui, Nao Takeuchi and Atsushi Fujita, A Thesaurus of Predicate-Argument Structure for Japanese Verbs to Deal with Granularity of Verb Meanings, The 8th Workshop on Asian Language Resources, pages 1-8, Beijing, 21th (21-22) August 2010.
+
+どうぞよろしくお願いします．
+------------------------------------------------------------
+竹内　孔一 <koichi@cl.cs.okayama-u.ac.jp>
+岡山大学大学院自然科学研究科
+http://www.cl.cs.okayama-u.ac.jp/

@@ -2,6 +2,7 @@ from asapy.init.JsonFile import JsonFile
 from asapy.load.LoadJson import LoadJson
 from asapy.parse.Parse import Parse
 from asapy.output.Output import Output
+from asapy.result.Result import Result
 
 #from memory_profiler import profile
 
@@ -25,3 +26,6 @@ class ASA():
 
     def dumpJson(self) -> dict:
         return self.output.outputJson(self.result)
+
+    def evaluate(self) -> Result:
+        return self.result
