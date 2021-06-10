@@ -1,112 +1,175 @@
-{
-  "chunks": [
+[
     {
-      "id": 0,
-      "surface": "正社員が",
-      "link": 1,
-      "head": 0,
-      "fanc": 1,
-      "score": 0.0,
-      "modified": [
-        1
-      ],
-      "type": "elem",
-      "main": "正社員",
-      "part": "が",
-      "tense": "PRESENT",
-      "frames": [
-        {
-          "id": 1,
-          "semrole": ""
-        }
-      ],
-      "semrole": "対象",
-      "category": [
-        "人"
-      ],
-      "morphs": [
-        {
-          "id": 0,
-          "surface": "正社員",
-          "pos": "名詞,一般",
-          "cform": "",
-          "ctype": "",
-          "base": "正社員",
-          "read": "セイシャイン"
-        },
-        {
-          "id": 1,
-          "surface": "が",
-          "pos": "助詞,格助詞,一般",
-          "cform": "",
-          "ctype": "",
-          "base": "が",
-          "read": "ガ"
-        }
-      ]
+        "chunks": [
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 2,
+                "main": "会社",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "会社",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "カイシャ",
+                        "surface": "会社"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -1.596418,
+                "semrole": "場所",
+                "surface": "会社が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 2,
+                "main": "社員",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "社員",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "シャイン",
+                        "surface": "社員"
+                    },
+                    {
+                        "base": "を",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ヲ",
+                        "surface": "を"
+                    }
+                ],
+                "part": "を",
+                "score": -1.596418,
+                "semrole": "対象",
+                "surface": "社員を",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "場所"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "対象"
+                    }
+                ],
+                "head": 1,
+                "id": 2,
+                "link": -1,
+                "main": "シフトする",
+                "modified": [
+                    0,
+                    1
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "シフト",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,サ変接続",
+                        "read": "シフト",
+                        "surface": "シフト"
+                    },
+                    {
+                        "base": "する",
+                        "cform": "サ変・スル",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,する,スル",
+                            "文語基本形,す,ス",
+                            "未然形,し,シ",
+                            "未然ウ接続,しよ,シヨ",
+                            "未然ウ接続,しょ,ショ",
+                            "未然レル接続,さ,サ",
+                            "未然ヌ接続,せ,セ",
+                            "連用形,し,シ",
+                            "仮定形,すれ,スレ",
+                            "命令ｙｏ,せよ,セヨ",
+                            "命令ｒｏ,しろ,シロ",
+                            "命令ｉ,せい,セイ",
+                            "仮定縮約１,すりゃ,スリャ",
+                            "体言接続特殊,すん,スン",
+                            "体言接続特殊２,す,ス"
+                        ],
+                        "id": 1,
+                        "pos": "動詞,自立",
+                        "read": "スル",
+                        "surface": "する"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-位置そのものの変化-",
+                "sentelem": "PREDICATE",
+                "surface": "シフトする",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "会社が社員をシフトする"
     },
     {
-      "id": 1,
-      "surface": "シフトする",
-      "link": -1,
-      "head": 1,
-      "fanc": 1,
-      "score": 0.0,
-      "modified": [
-        0
-      ],
-      "type": "verb",
-      "main": "シフトする",
-      "tense": "PRESENT",
-      "voice": "ACTIVE",
-      "polarity": "AFFIRMATIVE",
-      "sentelem": "PREDICATE",
-      "mood": "INDICATIVE",
-      "semantic": "状態変化あり-位置変化-位置変化（物理）-位置そのものの変化-",
-      "frames": [
-        {
-          "id": 0,
-          "semrole": "対象"
-        }
-      ],
-      "morphs": [
-        {
-          "id": 0,
-          "surface": "シフト",
-          "pos": "名詞,サ変接続",
-          "cform": "",
-          "ctype": "",
-          "base": "シフト",
-          "read": "シフト"
-        },
-        {
-          "id": 1,
-          "surface": "する",
-          "pos": "動詞,自立",
-          "cform": "サ変・スル",
-          "ctype": "基本形",
-          "base": "する",
-          "read": "スル",
-          "forms": [
-            "基本形,する,スル",
-            "文語基本形,す,ス",
-            "未然形,し,シ",
-            "未然ウ接続,しよ,シヨ",
-            "未然ウ接続,しょ,ショ",
-            "未然レル接続,さ,サ",
-            "未然ヌ接続,せ,セ",
-            "連用形,し,シ",
-            "仮定形,すれ,スレ",
-            "命令ｙｏ,せよ,セヨ",
-            "命令ｒｏ,しろ,シロ",
-            "命令ｉ,せい,セイ",
-            "仮定縮約１,すりゃ,スリャ",
-            "体言接続特殊,すん,スン",
-            "体言接続特殊２,す,ス"
-          ]
-        }
-      ]
+        "wrong": [
+            {
+                "semrole": "場所",
+                "surface": "会社が"
+            },
+            {},
+            {}
+        ]
     }
-  ],
-  "surface": "正社員がシフトする"
-}
+]
