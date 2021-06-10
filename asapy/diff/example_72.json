@@ -1,0 +1,250 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 3,
+                "main": "彼",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "彼",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,代名詞,一般",
+                        "read": "カレ",
+                        "surface": "彼"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -1.617953,
+                "semrole": "動作主",
+                "surface": "彼が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "category": [
+                    "場所"
+                ],
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": "起点"
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 2,
+                "main": "上空",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "上空",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ジョウクウ",
+                        "surface": "上空"
+                    }
+                ],
+                "score": 1.363672,
+                "surface": "上空",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "category": [
+                    "数値"
+                ],
+                "fanc": 5,
+                "frames": [
+                    {
+                        "id": 1,
+                        "semrole": ""
+                    },
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 4,
+                "id": 2,
+                "link": 3,
+                "main": "３０００メートル",
+                "modified": [
+                    1,
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "３",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,数",
+                        "read": "サン",
+                        "surface": "３"
+                    },
+                    {
+                        "base": "０",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,数",
+                        "read": "ゼロ",
+                        "surface": "０"
+                    },
+                    {
+                        "base": "０",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "名詞,数",
+                        "read": "ゼロ",
+                        "surface": "０"
+                    },
+                    {
+                        "base": "０",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 3,
+                        "pos": "名詞,数",
+                        "read": "ゼロ",
+                        "surface": "０"
+                    },
+                    {
+                        "base": "メートル",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 4,
+                        "pos": "名詞,接尾,助数詞",
+                        "read": "メートル",
+                        "surface": "メートル"
+                    },
+                    {
+                        "base": "から",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 5,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "カラ",
+                        "surface": "から"
+                    }
+                ],
+                "part": "から",
+                "score": -1.617953,
+                "semrole": "起点",
+                "surface": "３０００メートルから",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "起点"
+                    }
+                ],
+                "head": 1,
+                "id": 3,
+                "link": -1,
+                "main": "ダイビングする",
+                "modified": [
+                    0,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "ダイビング",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,サ変接続",
+                        "read": "ダイビング",
+                        "surface": "ダイビング"
+                    },
+                    {
+                        "base": "する",
+                        "cform": "サ変・スル",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,する,スル",
+                            "文語基本形,す,ス",
+                            "未然形,し,シ",
+                            "未然ウ接続,しよ,シヨ",
+                            "未然ウ接続,しょ,ショ",
+                            "未然レル接続,さ,サ",
+                            "未然ヌ接続,せ,セ",
+                            "連用形,し,シ",
+                            "仮定形,すれ,スレ",
+                            "命令ｙｏ,せよ,セヨ",
+                            "命令ｒｏ,しろ,シロ",
+                            "命令ｉ,せい,セイ",
+                            "仮定縮約１,すりゃ,スリャ",
+                            "体言接続特殊,すん,スン",
+                            "体言接続特殊２,す,ス"
+                        ],
+                        "id": 1,
+                        "pos": "動詞,自立",
+                        "read": "スル",
+                        "surface": "する"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "ダイビングする",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "彼が上空３０００メートルからダイビングする"
+    },
+    {
+        "wrong": [
+            {},
+            {},
+            {
+                "semrole": "起点",
+                "surface": "上空３０００メートルから"
+            },
+            {}
+        ]
+    }
+]

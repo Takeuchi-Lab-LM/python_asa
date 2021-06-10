@@ -1,0 +1,229 @@
+[
+    {
+        "chunks": [
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 3,
+                "main": "咸臨丸",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "咸臨丸",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,固有名詞,一般",
+                        "read": "カンリンマル",
+                        "surface": "咸臨丸"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -0.54851,
+                "semrole": "場所",
+                "surface": "咸臨丸が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 3,
+                "main": "港",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "港",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ミナト",
+                        "surface": "港"
+                    },
+                    {
+                        "base": "を",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ヲ",
+                        "surface": "を"
+                    }
+                ],
+                "part": "を",
+                "score": -0.54851,
+                "semrole": "起点",
+                "surface": "港を",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": 3,
+                "main": "南方",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "南方",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ナンポウ",
+                        "surface": "南方"
+                    },
+                    {
+                        "base": "に",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ニ",
+                        "surface": "に"
+                    }
+                ],
+                "part": "に",
+                "score": -0.54851,
+                "semrole": "方向",
+                "sentelem": "ADVERBIAL",
+                "surface": "南方に",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "場所"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "起点"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "方向"
+                    }
+                ],
+                "head": 1,
+                "id": 3,
+                "link": -1,
+                "main": "出航する",
+                "modified": [
+                    0,
+                    1,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "出航",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,サ変接続",
+                        "read": "シュッコウ",
+                        "surface": "出航"
+                    },
+                    {
+                        "base": "する",
+                        "cform": "サ変・スル",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,する,スル",
+                            "文語基本形,す,ス",
+                            "未然形,し,シ",
+                            "未然ウ接続,しよ,シヨ",
+                            "未然ウ接続,しょ,ショ",
+                            "未然レル接続,さ,サ",
+                            "未然ヌ接続,せ,セ",
+                            "連用形,し,シ",
+                            "仮定形,すれ,スレ",
+                            "命令ｙｏ,せよ,セヨ",
+                            "命令ｒｏ,しろ,シロ",
+                            "命令ｉ,せい,セイ",
+                            "仮定縮約１,すりゃ,スリャ",
+                            "体言接続特殊,すん,スン",
+                            "体言接続特殊２,す,ス"
+                        ],
+                        "id": 1,
+                        "pos": "動詞,自立",
+                        "read": "スル",
+                        "surface": "する"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "出航する",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "咸臨丸が港を南方に出航する"
+    },
+    {
+        "wrong": [
+            {
+                "semrole": "動作主",
+                "surface": "咸臨丸が"
+            },
+            {},
+            {},
+            {}
+        ]
+    }
+]

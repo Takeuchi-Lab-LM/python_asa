@@ -1,0 +1,158 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 2,
+                "main": "生徒",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "生徒",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "セイト",
+                        "surface": "生徒"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -1.014584,
+                "semrole": "動作主|対象",
+                "surface": "生徒が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 2,
+                "main": "前",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "前",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,副詞可能",
+                        "read": "マエ",
+                        "surface": "前"
+                    },
+                    {
+                        "base": "に",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ニ",
+                        "surface": "に"
+                    }
+                ],
+                "part": "に",
+                "score": -1.014584,
+                "semrole": "着点（抽象）",
+                "sentelem": "ADVERBIAL",
+                "surface": "前に",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主|対象"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "着点（抽象）"
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": -1,
+                "main": "出る",
+                "modified": [
+                    0,
+                    1
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "出る",
+                        "cform": "一段",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,る,ル",
+                            "未然形,*,*",
+                            "未然ウ接続,よ,ヨ",
+                            "連用形,*,*",
+                            "仮定形,れ,レ",
+                            "命令ｙｏ,よ,ヨ",
+                            "命令ｒｏ,ろ,ロ",
+                            "仮定縮約１,りゃ,リャ",
+                            "体言接続特殊,ん,ン"
+                        ],
+                        "id": 0,
+                        "pos": "動詞,自立",
+                        "read": "デル",
+                        "surface": "出る"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-着点への移動-参加",
+                "sentelem": "PREDICATE",
+                "surface": "出る",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "生徒が前に出る"
+    },
+    {
+        "wrong": [
+            {},
+            {},
+            {}
+        ]
+    }
+]

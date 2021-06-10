@@ -1,0 +1,257 @@
+[
+    {
+        "chunks": [
+            {
+                "Arg": [
+                    "Arg1"
+                ],
+                "category": [
+                    "その他"
+                ],
+                "fanc": 2,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 1,
+                "id": 0,
+                "link": 3,
+                "main": "梅雨前線",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "梅雨",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ツユ",
+                        "surface": "梅雨"
+                    },
+                    {
+                        "base": "前線",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,一般",
+                        "read": "ゼンセン",
+                        "surface": "前線"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -0.41048,
+                "semrole": "対象",
+                "surface": "梅雨前線が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "Arg": [
+                    "Arg2"
+                ],
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 2,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 1,
+                "id": 1,
+                "link": 3,
+                "main": "九州地方",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "九州",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,固有名詞,地域,一般",
+                        "read": "キュウシュウ",
+                        "surface": "九州"
+                    },
+                    {
+                        "base": "地方",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,一般",
+                        "read": "チホウ",
+                        "surface": "地方"
+                    },
+                    {
+                        "base": "から",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "カラ",
+                        "surface": "から"
+                    }
+                ],
+                "part": "から",
+                "score": -0.41048,
+                "semrole": "起点",
+                "surface": "九州地方から",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "Arg": [
+                    "Arg3"
+                ],
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 2,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 1,
+                "id": 2,
+                "link": 3,
+                "main": "東北地方",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "東北",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,固有名詞,地域,一般",
+                        "read": "トウホク",
+                        "surface": "東北"
+                    },
+                    {
+                        "base": "地方",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,一般",
+                        "read": "チホウ",
+                        "surface": "地方"
+                    },
+                    {
+                        "base": "に",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ニ",
+                        "surface": "に"
+                    }
+                ],
+                "part": "に",
+                "score": -0.41048,
+                "semrole": "着点",
+                "sentelem": "ADVERBIAL",
+                "surface": "東北地方に",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "Arg": [],
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "対象"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "起点"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "着点"
+                    }
+                ],
+                "head": 0,
+                "id": 3,
+                "link": -1,
+                "main": "遠ざかる",
+                "modified": [
+                    0,
+                    1,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "遠ざかる",
+                        "cform": "五段・ラ行",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,る,ル",
+                            "未然形,ら,ラ",
+                            "未然特殊,ん,ン",
+                            "未然ウ接続,ろ,ロ",
+                            "連用形,り,リ",
+                            "連用タ接続,っ,ッ",
+                            "仮定形,れ,レ",
+                            "命令ｅ,れ,レ",
+                            "仮定縮約１,りゃ,リャ",
+                            "体言接続特殊,ん,ン",
+                            "体言接続特殊２,*,*"
+                        ],
+                        "id": 0,
+                        "pos": "動詞,自立",
+                        "read": "トオザカル",
+                        "surface": "遠ざかる"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点から着点への移動-",
+                "sentelem": "PREDICATE",
+                "surface": "遠ざかる",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "梅雨前線が九州地方から東北地方に遠ざかる"
+    },
+    {
+        "wrong": [
+            {},
+            {
+                "Arg": "Arg2",
+                "semrole": "着点",
+                "surface": "東北地方に"
+            },
+            {
+                "Arg": "Arg3",
+                "semrole": "起点",
+                "surface": "九州地方から"
+            },
+            {}
+        ]
+    }
+]

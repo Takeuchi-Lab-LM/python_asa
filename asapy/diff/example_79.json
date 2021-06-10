@@ -1,0 +1,184 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "モノ"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 2,
+                "main": "列車",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "列車",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "レッシャ",
+                        "surface": "列車"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -1.843139,
+                "semrole": "動作主",
+                "surface": "列車が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 2,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 1,
+                "id": 1,
+                "link": 2,
+                "main": "東京駅",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "東京",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,固有名詞,地域,一般",
+                        "read": "トウキョウ",
+                        "surface": "東京"
+                    },
+                    {
+                        "base": "駅",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,接尾,地域",
+                        "read": "エキ",
+                        "surface": "駅"
+                    },
+                    {
+                        "base": "を",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ヲ",
+                        "surface": "を"
+                    }
+                ],
+                "part": "を",
+                "score": -1.843139,
+                "semrole": "場所",
+                "surface": "東京駅を",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "場所"
+                    }
+                ],
+                "head": 1,
+                "id": 2,
+                "link": -1,
+                "main": "発車する",
+                "modified": [
+                    0,
+                    1
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "発車",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,サ変接続",
+                        "read": "ハッシャ",
+                        "surface": "発車"
+                    },
+                    {
+                        "base": "する",
+                        "cform": "サ変・スル",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,する,スル",
+                            "文語基本形,す,ス",
+                            "未然形,し,シ",
+                            "未然ウ接続,しよ,シヨ",
+                            "未然ウ接続,しょ,ショ",
+                            "未然レル接続,さ,サ",
+                            "未然ヌ接続,せ,セ",
+                            "連用形,し,シ",
+                            "仮定形,すれ,スレ",
+                            "命令ｙｏ,せよ,セヨ",
+                            "命令ｒｏ,しろ,シロ",
+                            "命令ｉ,せい,セイ",
+                            "仮定縮約１,すりゃ,スリャ",
+                            "体言接続特殊,すん,スン",
+                            "体言接続特殊２,す,ス"
+                        ],
+                        "id": 1,
+                        "pos": "動詞,自立",
+                        "read": "スル",
+                        "surface": "する"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "発車する",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "列車が東京駅を発車する"
+    },
+    {
+        "wrong": [
+            {},
+            {
+                "semrole": "起点",
+                "surface": "東京駅を"
+            },
+            {}
+        ]
+    }
+]

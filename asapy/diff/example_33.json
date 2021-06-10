@@ -1,0 +1,157 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "身体部分"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 1,
+                        "semrole": "対象（身体部分）"
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 1,
+                "main": "足",
+                "modified": [
+                    1
+                ],
+                "morphs": [
+                    {
+                        "base": "足",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "アシ",
+                        "surface": "足"
+                    },
+                    {
+                        "base": "の",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,連体化",
+                        "read": "ノ",
+                        "surface": "の"
+                    }
+                ],
+                "part": "の",
+                "score": 1.222947,
+                "sentelem": "ADNOMINAL",
+                "surface": "足の",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "category": [
+                    "身体部分"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": ""
+                    },
+                    {
+                        "id": 2,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 2,
+                "main": "筋",
+                "modified": [
+                    0,
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "筋",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "スジ",
+                        "surface": "筋"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": 1.222947,
+                "semrole": "対象（身体部分）",
+                "surface": "筋が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 1,
+                        "semrole": "対象（身体部分）"
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": -1,
+                "main": "違う",
+                "modified": [
+                    1
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "違う",
+                        "cform": "五段・ワ行促音便",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,う,ウ",
+                            "未然形,わ,ワ",
+                            "未然ウ接続,お,オ",
+                            "連用形,い,イ",
+                            "連用タ接続,っ,ッ",
+                            "仮定形,え,エ",
+                            "命令ｅ,え,エ"
+                        ],
+                        "id": 0,
+                        "pos": "動詞,自立",
+                        "read": "チガウ",
+                        "surface": "違う"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "違う",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "足の筋が違う"
+    },
+    {
+        "wrong": [
+            {},
+            {
+                "semrole": "対象（身体部分）",
+                "surface": "足の筋が"
+            },
+            {}
+        ]
+    }
+]

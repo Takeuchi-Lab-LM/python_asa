@@ -1,0 +1,211 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 3,
+                "main": "犯人",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "犯人",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ハンニン",
+                        "surface": "犯人"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -0.938495,
+                "semrole": "動作主",
+                "surface": "犯人が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 3,
+                "main": "家",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "家",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "イエ",
+                        "surface": "家"
+                    },
+                    {
+                        "base": "から",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "カラ",
+                        "surface": "から"
+                    }
+                ],
+                "part": "から",
+                "score": -0.938495,
+                "semrole": "場所",
+                "surface": "家から",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": 3,
+                "main": "外",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "外",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ソト",
+                        "surface": "外"
+                    },
+                    {
+                        "base": "に",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ニ",
+                        "surface": "に"
+                    }
+                ],
+                "part": "に",
+                "score": -0.938495,
+                "semrole": "方向",
+                "sentelem": "ADVERBIAL",
+                "surface": "外に",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "場所"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "方向"
+                    }
+                ],
+                "head": 0,
+                "id": 3,
+                "link": -1,
+                "main": "逃げ出す",
+                "modified": [
+                    0,
+                    1,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "逃げ出す",
+                        "cform": "五段・サ行",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,す,ス",
+                            "未然形,さ,サ",
+                            "未然ウ接続,そ,ソ",
+                            "連用形,し,シ",
+                            "仮定形,せ,セ",
+                            "命令ｅ,せ,セ",
+                            "仮定縮約１,しゃ,シャ"
+                        ],
+                        "id": 0,
+                        "pos": "動詞,自立",
+                        "read": "ニゲダス",
+                        "surface": "逃げ出す"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "逃げ出す",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "犯人が家から外に逃げ出す"
+    },
+    {
+        "wrong": [
+            {},
+            {
+                "semrole": "起点",
+                "surface": "家から"
+            },
+            {},
+            {}
+        ]
+    }
+]

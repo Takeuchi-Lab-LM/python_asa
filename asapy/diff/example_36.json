@@ -1,0 +1,240 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 2,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 1,
+                "id": 0,
+                "link": 3,
+                "main": "政治犯",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "政治",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "セイジ",
+                        "surface": "政治"
+                    },
+                    {
+                        "base": "犯",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,接尾,一般",
+                        "read": "ハン",
+                        "surface": "犯"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -0.95378,
+                "semrole": "動作主",
+                "surface": "政治犯が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 3,
+                "main": "母国",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "母国",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ボコク",
+                        "surface": "母国"
+                    },
+                    {
+                        "base": "から",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "カラ",
+                        "surface": "から"
+                    }
+                ],
+                "part": "から",
+                "score": -0.95378,
+                "semrole": "場所",
+                "surface": "母国から",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": 3,
+                "main": "国外",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "国外",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "コクガイ",
+                        "surface": "国外"
+                    },
+                    {
+                        "base": "に",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ニ",
+                        "surface": "に"
+                    }
+                ],
+                "part": "に",
+                "score": -0.95378,
+                "semrole": "着点",
+                "sentelem": "ADVERBIAL",
+                "surface": "国外に",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "場所"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "着点"
+                    }
+                ],
+                "head": 1,
+                "id": 3,
+                "link": -1,
+                "main": "脱出する",
+                "modified": [
+                    0,
+                    1,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "脱出",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,サ変接続",
+                        "read": "ダッシュツ",
+                        "surface": "脱出"
+                    },
+                    {
+                        "base": "する",
+                        "cform": "サ変・スル",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,する,スル",
+                            "文語基本形,す,ス",
+                            "未然形,し,シ",
+                            "未然ウ接続,しよ,シヨ",
+                            "未然ウ接続,しょ,ショ",
+                            "未然レル接続,さ,サ",
+                            "未然ヌ接続,せ,セ",
+                            "連用形,し,シ",
+                            "仮定形,すれ,スレ",
+                            "命令ｙｏ,せよ,セヨ",
+                            "命令ｒｏ,しろ,シロ",
+                            "命令ｉ,せい,セイ",
+                            "仮定縮約１,すりゃ,スリャ",
+                            "体言接続特殊,すん,スン",
+                            "体言接続特殊２,す,ス"
+                        ],
+                        "id": 1,
+                        "pos": "動詞,自立",
+                        "read": "スル",
+                        "surface": "する"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点から着点への移動-",
+                "sentelem": "PREDICATE",
+                "surface": "脱出する",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "政治犯が母国から国外に脱出する"
+    },
+    {
+        "wrong": [
+            {},
+            {
+                "semrole": "着点",
+                "surface": "国外に"
+            },
+            {
+                "semrole": "起点",
+                "surface": "母国から"
+            },
+            {}
+        ]
+    }
+]

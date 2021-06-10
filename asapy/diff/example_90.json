@@ -1,0 +1,197 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 0,
+                "link": 3,
+                "main": "母",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "母",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ハハ",
+                        "surface": "母"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -1.275066,
+                "semrole": "動作主",
+                "surface": "母が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 2,
+                        "semrole": "起点"
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 2,
+                "main": "",
+                "modified": [
+                    2
+                ],
+                "morphs": [
+                    {
+                        "base": "その",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "連体詞",
+                        "read": "ソノ",
+                        "surface": "その"
+                    }
+                ],
+                "score": 1.337863,
+                "sentelem": "ADNOMINAL",
+                "surface": "その",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 1,
+                        "semrole": ""
+                    },
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": 3,
+                "main": "場",
+                "modified": [
+                    1,
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "場",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "バ",
+                        "surface": "場"
+                    },
+                    {
+                        "base": "を",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ヲ",
+                        "surface": "を"
+                    }
+                ],
+                "part": "を",
+                "score": -1.275066,
+                "semrole": "起点",
+                "surface": "場を",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 0,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "起点"
+                    }
+                ],
+                "head": 0,
+                "id": 3,
+                "link": -1,
+                "main": "発つ",
+                "modified": [
+                    0,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "発つ",
+                        "cform": "五段・タ行",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,つ,ツ",
+                            "未然形,た,タ",
+                            "未然ウ接続,と,ト",
+                            "連用形,ち,チ",
+                            "連用タ接続,っ,ッ",
+                            "仮定形,て,テ",
+                            "命令ｅ,て,テ",
+                            "仮定縮約１,ちゃ,チャ"
+                        ],
+                        "id": 0,
+                        "pos": "動詞,自立",
+                        "read": "タツ",
+                        "surface": "発つ"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "発つ",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "母がその場を発つ"
+    },
+    {
+        "wrong": [
+            {},
+            {},
+            {
+                "semrole": "起点",
+                "surface": "その場を"
+            },
+            {}
+        ]
+    }
+]

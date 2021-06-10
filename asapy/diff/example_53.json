@@ -1,0 +1,244 @@
+[
+    {
+        "chunks": [
+            {
+                "category": [
+                    "人"
+                ],
+                "fanc": 2,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 1,
+                "id": 0,
+                "link": 3,
+                "main": "容疑者",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "容疑",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ヨウギ",
+                        "surface": "容疑"
+                    },
+                    {
+                        "base": "者",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "名詞,接尾,一般",
+                        "read": "シャ",
+                        "surface": "者"
+                    },
+                    {
+                        "base": "が",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 2,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ガ",
+                        "surface": "が"
+                    }
+                ],
+                "part": "が",
+                "score": -0.82797,
+                "semrole": "動作主",
+                "surface": "容疑者が",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 1,
+                "link": 3,
+                "main": "現場",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "現場",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ゲンバ",
+                        "surface": "現場"
+                    },
+                    {
+                        "base": "から",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "カラ",
+                        "surface": "から"
+                    }
+                ],
+                "part": "から",
+                "score": -0.82797,
+                "semrole": "場所",
+                "surface": "現場から",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "adjunct": "場所",
+                "category": [
+                    "場所"
+                ],
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 3,
+                        "semrole": ""
+                    }
+                ],
+                "head": 0,
+                "id": 2,
+                "link": 3,
+                "main": "西",
+                "modified": [
+                    3
+                ],
+                "morphs": [
+                    {
+                        "base": "西",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 0,
+                        "pos": "名詞,一般",
+                        "read": "ニシ",
+                        "surface": "西"
+                    },
+                    {
+                        "base": "に",
+                        "cform": "",
+                        "ctype": "",
+                        "id": 1,
+                        "pos": "助詞,格助詞,一般",
+                        "read": "ニ",
+                        "surface": "に"
+                    }
+                ],
+                "part": "に",
+                "score": -0.82797,
+                "semrole": "方向",
+                "sentelem": "ADVERBIAL",
+                "surface": "西に",
+                "tense": "PRESENT",
+                "type": "elem"
+            },
+            {
+                "fanc": 1,
+                "frames": [
+                    {
+                        "id": 0,
+                        "semrole": "動作主"
+                    },
+                    {
+                        "id": 1,
+                        "semrole": "場所"
+                    },
+                    {
+                        "id": 2,
+                        "semrole": "方向"
+                    }
+                ],
+                "head": 1,
+                "id": 3,
+                "link": -1,
+                "main": "逃げ去る",
+                "modified": [
+                    0,
+                    1,
+                    2
+                ],
+                "mood": "INDICATIVE",
+                "morphs": [
+                    {
+                        "base": "逃げる",
+                        "cform": "一段",
+                        "ctype": "連用形",
+                        "forms": [
+                            "基本形,る,ル",
+                            "未然形,*,*",
+                            "未然ウ接続,よ,ヨ",
+                            "連用形,*,*",
+                            "仮定形,れ,レ",
+                            "命令ｙｏ,よ,ヨ",
+                            "命令ｒｏ,ろ,ロ",
+                            "仮定縮約１,りゃ,リャ",
+                            "体言接続特殊,ん,ン"
+                        ],
+                        "id": 0,
+                        "pos": "動詞,自立",
+                        "read": "ニゲ",
+                        "surface": "逃げ"
+                    },
+                    {
+                        "base": "去る",
+                        "cform": "五段・ラ行",
+                        "ctype": "基本形",
+                        "forms": [
+                            "基本形,る,ル",
+                            "未然形,ら,ラ",
+                            "未然特殊,ん,ン",
+                            "未然ウ接続,ろ,ロ",
+                            "連用形,り,リ",
+                            "連用タ接続,っ,ッ",
+                            "仮定形,れ,レ",
+                            "命令ｅ,れ,レ",
+                            "仮定縮約１,りゃ,リャ",
+                            "体言接続特殊,ん,ン",
+                            "体言接続特殊２,*,*"
+                        ],
+                        "id": 1,
+                        "pos": "動詞,自立",
+                        "read": "サル",
+                        "surface": "去る"
+                    }
+                ],
+                "polarity": "AFFIRMATIVE",
+                "score": 0.0,
+                "semantic": "状態変化あり-位置変化-位置変化（物理）-起点からの移動-",
+                "sentelem": "PREDICATE",
+                "surface": "逃げ去る",
+                "tense": "PRESENT",
+                "type": "verb",
+                "voice": "ACTIVE"
+            }
+        ],
+        "surface": "容疑者が現場から西に逃げ去る"
+    },
+    {
+        "wrong": [
+            {},
+            {
+                "semrole": "起点",
+                "surface": "現場から"
+            },
+            {},
+            {}
+        ]
+    }
+]
