@@ -73,13 +73,13 @@ if __name__ == '__main__':
     total_fp = 0
     total_fn = 0
     total_nn = 0
-    for i in range(2,26):
-        diff_json = {'correct': [], 'wrong': []}
-        wrong_json = {'wrong':[]}
+    for i in range(2,1000):
+        correct_json = {'correct':[]}
         obj = "A{}:BB{}".format(i,i)
         cell = sheet[obj]
     
         sentence = cell[0][39].value
+        verb = [cell[0][2].value,cell[0][3].value]
         case1 = [cell[0][4].value,cell[0][5].value,cell[0][6].value,cell[0][7].value,cell[0][8].value,cell[0][9].value,cell[0][10].value]
         case2 = [cell[0][11].value,cell[0][12].value,cell[0][13].value,cell[0][14].value,cell[0][15].value,cell[0][16].value,cell[0][17].value]
         case3 = [cell[0][18].value,cell[0][19].value,cell[0][20].value,cell[0][21].value,cell[0][22].value,cell[0][23].value,cell[0][24].value]
@@ -100,13 +100,14 @@ if __name__ == '__main__':
             #hasArg && hasChunk.arg Q.Argがないことはあるのか
                 if chunk.arg:
                     if chunk.arg[0] in case1:
-                        if chunk.surface in case1 and chunk.semrole[0] in case1:
+                        if chunk.surface in case1 and chunk.semrole[0] in case1 and chunk.part in case1:
                             print("kaku-1")
                         else:
                             tp = False
                             correct_chunk['Arg'] = cell[0][5].value
                             correct_chunk['surface'] = cell[0][7].value
                             correct_chunk['semrole'] = cell[0][4].value
+                            correct_chunk['part'] = cell[0][6].value
                     elif chunk.arg[0] in case2:
                         if chunk.surface in case2 and chunk.semrole[0] in case2:
                             print("kaku-2")
@@ -148,28 +149,53 @@ if __name__ == '__main__':
             if chunk.ctype == "adjective":
                 print("ADJECTIVE")
             if chunk.ctype == "verb":
+                string_read = ""
+                for morph in chunk.morphs:
+                    string_read += morph.read
                 if chunk.semantic:
                     if chunk.semantic == semantic:
                         print("SEMANTIC")
-            wrong_json['wrong'].append(correct_chunk)
+                    else:
+                        correct_chunk['semantic'] = semantic
+                        tp = False
+                else:
+                    fn = True
+                if chunk.main:
+                    if chunk.main == verb[0]:
+                        print("mainTrue")
+                    else:
+                        correct_chunk['verb_main'] = verb[0]
+                        tp = False
+                else:
+                    fn = True
+                if string_read == verb[1]:
+                    print("YOMIKATA_TRUE")
+                else:
+                    correct_chunk['verb_read'] = verb[1]
+                    tp = False
+            correct_json['correct'].append(correct_chunk)
         if tp:
             total_tp += 1
         else:
             total_fp += 1
-            result_json = outputJson(result)
+            result_json = outputJson(result) #違うやつ
             emptyList = []
             emptyList.append(result_json)
-            emptyList.append(wrong_json)
+            emptyList.append(correct_json)
             filename =  "diff/example_{}.json".format(i-1)
-            with open(filename,'w') as f: #example_number(1,2)
-                json.dump(emptyList,f,sort_keys=True,indent=4,ensure_ascii=False)
+            #with open(filename,'w') as f: #example_number(1,2)
+            #    json.dump(emptyList,f,sort_keys=True,indent=4,ensure_ascii=False)
         if fn:
             total_fn += 1
-            #diffを出力
+            result_json = outputJson(result) #違うやつ
+            emptyList = []
+            emptyList.append(result_json)
+            emptyList.append(correct_json)
+            filename =  "diff/example_{}.json".format(i-1)
+            #with open(filename,'w') as f: #example_number(1,2)
+            #    json.dump(emptyList,f,sort_keys=True,indent=4,ensure_ascii=False)
         else:
             total_nn += 1
-
-        print(wrong_json)
 
     print(total_tp,total_fp,total_fn,total_nn)
     precision = total_tp / (total_tp + total_fp)
