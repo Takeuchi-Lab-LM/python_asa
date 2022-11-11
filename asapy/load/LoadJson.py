@@ -21,7 +21,7 @@ class LoadJson():
     def __loadJson(self, jsonpath: str) -> dict:
         dirname = os.path.dirname(__file__)
         abspath = os.path.abspath(dirname)
-        with open(os.path.join(abspath)+'/../'+jsonpath, 'r+') as f:
+        with open(os.path.join(abspath)+'/../'+jsonpath, 'r') as f:
             return json.load(f)
 
     def __loadFrames(self, dic, jsonpath):
